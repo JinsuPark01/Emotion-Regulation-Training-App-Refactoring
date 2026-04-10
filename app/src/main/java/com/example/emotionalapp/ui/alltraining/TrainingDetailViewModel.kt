@@ -21,19 +21,14 @@ import com.example.emotionalapp.ui.mind.ArtActivity
 import com.example.emotionalapp.ui.mind.AutoActivity
 import com.example.emotionalapp.ui.mind.TrapActivity
 import com.example.emotionalapp.ui.weekly.WeeklyActivity
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-import java.text.SimpleDateFormat
-import java.util.Date
-import java.util.Locale
-import java.util.TimeZone
-import java.util.concurrent.TimeUnit
 
-class TrainingDetailViewModel : ViewModel() {
+class TrainingDetailViewModel(
+    private val repository: TrainingDetailRepository = TrainingDetailRepository()
+) : ViewModel() {
 
     private val _uiState = MutableStateFlow(TrainingDetailUiState(isLoading = true))
     val uiState: StateFlow<TrainingDetailUiState> = _uiState.asStateFlow()
@@ -44,80 +39,32 @@ class TrainingDetailViewModel : ViewModel() {
             isLoading = true
         )
 
-        val user = FirebaseAuth.getInstance().currentUser
-        val userEmail = user?.email
+        viewModelScope.launch {
+            val result = repository.getTrainingProgressData()
 
-        if (userEmail == null) {
-            _uiState.value = TrainingDetailUiState(
-                pageTitle = menuTitle,
-                recordItems = emptyList(),
-                trainingItems = loadTrainingItems(menuType, 0L, emptyMap()),
-                isLoading = false,
-                errorMessage = "로그인 정보를 확인할 수 없습니다."
-            )
-            return
-        }
-
-        val db = FirebaseFirestore.getInstance()
-        db.collection("user").document(userEmail).get()
-            .addOnSuccessListener { document ->
-                var userDiffDays = 0L
-                var countCompleteMap: Map<String, Long> = emptyMap()
-
-                if (document != null) {
-                    if (document.contains("signupDate")) {
-                        val timestamp = document.getTimestamp("signupDate")
-                        if (timestamp != null) {
-                            val koreaTimeZone = TimeZone.getTimeZone("Asia/Seoul")
-                            val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.KOREA).apply {
-                                timeZone = koreaTimeZone
-                            }
-
-                            val joinDateStr = dateFormat.format(timestamp.toDate())
-                            val todayStr = dateFormat.format(Date())
-
-                            val joinDate = dateFormat.parse(joinDateStr)
-                            val todayDate = dateFormat.parse(todayStr)
-
-                            if (joinDate != null && todayDate != null) {
-                                val diffMillis = todayDate.time - joinDate.time
-                                userDiffDays = TimeUnit.MILLISECONDS.toDays(diffMillis) + 1
-                            }
-                        }
-                    }
-
-                    if (document.contains("countComplete")) {
-                        val rawMap = document["countComplete"] as? Map<*, *>
-                        if (rawMap != null) {
-                            countCompleteMap = rawMap.mapNotNull { (key, value) ->
-                                val k = key as? String
-                                val v = when (value) {
-                                    is Long -> value
-                                    is Number -> value.toLong()
-                                    else -> null
-                                }
-                                if (k != null && v != null) k to v else null
-                            }.toMap()
-                        }
-                    }
+            result
+                .onSuccess { progressData ->
+                    _uiState.value = TrainingDetailUiState(
+                        pageTitle = menuTitle,
+                        recordItems = emptyList(),
+                        trainingItems = loadTrainingItems(
+                            type = menuType,
+                            userDiffDays = progressData.userDiffDays,
+                            countCompleteMap = progressData.countCompleteMap
+                        ),
+                        isLoading = false
+                    )
                 }
-
-                _uiState.value = TrainingDetailUiState(
-                    pageTitle = menuTitle,
-                    recordItems = emptyList(),
-                    trainingItems = loadTrainingItems(menuType, userDiffDays, countCompleteMap),
-                    isLoading = false
-                )
-            }
-            .addOnFailureListener { e ->
-                _uiState.value = TrainingDetailUiState(
-                    pageTitle = menuTitle,
-                    recordItems = emptyList(),
-                    trainingItems = emptyList(),
-                    isLoading = false,
-                    errorMessage = e.message ?: "데이터를 불러오지 못했습니다."
-                )
-            }
+                .onFailure { e ->
+                    _uiState.value = TrainingDetailUiState(
+                        pageTitle = menuTitle,
+                        recordItems = emptyList(),
+                        trainingItems = emptyList(),
+                        isLoading = false,
+                        errorMessage = e.message ?: "데이터를 불러오지 못했습니다."
+                    )
+                }
+        }
     }
 
     private fun getCurrentProgress(
@@ -160,7 +107,6 @@ class TrainingDetailViewModel : ViewModel() {
             }
 
             TrainingMenuType.EMOTION -> {
-                // 일단 예시로 전부 열어둠. 나중에 실제 denominator 규칙 넣으면 됨.
                 val denominatorArr = arrayOf("99", "99", "99", "99")
 
                 listOf(

@@ -259,9 +259,6 @@ class SelectActivity : AppCompatActivity() {
                         .update("countComplete.select", FieldValue.increment(1))
                         .addOnSuccessListener {
                             Toast.makeText(this, "상태 기록이 완료되었습니다", Toast.LENGTH_SHORT).show()
-                            // 마지막 페이지에서 완료 시 다른 액티비티 이동
-                            val intent = Intent(this, AllTrainingPageActivity::class.java)
-                            startActivity(intent)
                             finish()
                         }
                         .addOnFailureListener { e ->

@@ -156,7 +156,6 @@ class ArcActivity : AppCompatActivity() {
 
                         if (success) {
                             Toast.makeText(this@ArcActivity, "ARC 훈련 기록이 저장되었어요.", Toast.LENGTH_SHORT).show()
-                            startActivity(Intent(this@ArcActivity, AllTrainingPageActivity::class.java))
                             finish()
                         } else {
                             Toast.makeText(this@ArcActivity, "저장 실패. 다시 시도해주세요.", Toast.LENGTH_SHORT).show()

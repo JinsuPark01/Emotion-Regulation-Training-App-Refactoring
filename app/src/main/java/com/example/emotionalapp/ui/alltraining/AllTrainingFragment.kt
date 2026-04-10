@@ -3,6 +3,7 @@ package com.example.emotionalapp.ui.alltraining
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.Fragment
@@ -29,8 +30,7 @@ class AllTrainingFragment : Fragment() {
                     trainingItems = trainingItems,
                     onLogoutClick = { showLogoutDialog() },
                     onTabTodayClick = {
-                        val intent = Intent(requireContext(), DailyTrainingPageActivity::class.java)
-                        startActivity(intent)
+                        Toast.makeText(requireContext(), "금일 훈련 화면은 아직 연결되지 않았습니다.", Toast.LENGTH_SHORT).show()
                     },
                     onTabAllClick = {
                         Log.d("AllTrainingFragment", "전체 훈련 탭 클릭됨 (현재 페이지)")

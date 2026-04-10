@@ -196,10 +196,7 @@ class AnchorActivity : AppCompatActivity() {
                             .document(userEmail)
                             .update("countComplete.anchor", FieldValue.increment(1))
                             .addOnSuccessListener {
-                                Log.d("Firestore", "카운트 증가 성공")
                                 Toast.makeText(this@AnchorActivity, "닻 내리기 훈련 기록이 저장되었어요.", Toast.LENGTH_SHORT).show()
-                                val intent = Intent(this, AllTrainingPageActivity::class.java)
-                                startActivity(intent)
                                 finish()
                             }
                             .addOnFailureListener { e ->

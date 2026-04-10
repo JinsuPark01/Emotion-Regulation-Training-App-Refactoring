@@ -57,6 +57,8 @@ class MainActivity : AppCompatActivity() {
     private fun switchFragment(tab: BottomTab) {
         currentTab = tab
 
+        supportFragmentManager.popBackStack(null, androidx.fragment.app.FragmentManager.POP_BACK_STACK_INCLUSIVE)
+
         val fragment = when (tab) {
             BottomTab.MY_TRAINING -> AllTrainingFragment()
             BottomTab.CHAT -> ChatFragment()

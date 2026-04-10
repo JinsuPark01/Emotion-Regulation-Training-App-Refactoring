@@ -161,7 +161,6 @@ class ArtActivity : AppCompatActivity() {
                                         "단지 우리가 처음에 떠올린 생각 외에도 다른 해석이 얼마든지 가능하다는 사실을 알아내기 위함입니다."
                             )
                             .setPositiveButton("확인") { _, _ ->
-                                startActivity(Intent(this@ArtActivity, AllTrainingPageActivity::class.java))
                                 finish()
                             }
                             .setCancelable(false)

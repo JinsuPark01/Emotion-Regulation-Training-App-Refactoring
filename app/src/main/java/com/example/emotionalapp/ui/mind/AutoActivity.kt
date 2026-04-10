@@ -108,7 +108,6 @@ class AutoActivity : AppCompatActivity() {
                                         "앞으로도 연습을 통해 생각의 범위를 더욱 늘려가봅시다. 🌱"
                             )
                             .setPositiveButton("확인") { _, _ ->
-                                startActivity(Intent(this@AutoActivity, AllTrainingPageActivity::class.java))
                                 finish()
                             }
                             .setCancelable(false)

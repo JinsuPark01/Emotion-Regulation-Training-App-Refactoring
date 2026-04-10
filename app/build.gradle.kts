@@ -169,6 +169,9 @@ dependencies {
 
     implementation("androidx.compose.material:material-icons-extended")
 
+    //
+    implementation("androidx.fragment:fragment-ktx:1.8.6")
+
 
     // -------------------------
     // 테스트

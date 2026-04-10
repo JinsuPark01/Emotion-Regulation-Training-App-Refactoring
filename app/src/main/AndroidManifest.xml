@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.EmotionalApp"
+        tools:targetApi="31">
+
+        <activity
+            android:name=".ui.login_signup.LoginActivity"
+            android:exported="true" android:screenOrientation="portrait">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 회원가입 화면 -->
+        <activity android:name=".ui.login_signup.SignUpActivity" android:exported="false"  android:screenOrientation="portrait" />
+
+        <!-- 나의 훈련 목록 화면 -->
+
+        <activity android:name=".ui.main.MainActivity" android:exported="false"  android:screenOrientation="portrait" />
+
+        <activity android:name=".ui.alltraining.AllTrainingPageActivity" android:exported="false"  android:screenOrientation="portrait" />
+        <activity android:name=".ui.alltraining.DailyTrainingPageActivity" android:exported="false"  android:screenOrientation="portrait" />
+        <activity android:name=".ui.alltraining.IntroActivity" android:exported="false"  android:screenOrientation="portrait" />
+        <activity android:name=".ui.alltraining.EmotionActivity" android:exported="false"  android:screenOrientation="portrait" />
+        <activity android:name=".ui.alltraining.BodyActivity" android:exported="false"  android:screenOrientation="portrait" />
+        <activity android:name=".ui.alltraining.MindActivity" android:exported="false"  android:screenOrientation="portrait" />
+        <activity android:name=".ui.alltraining.ExpressionActivity" android:exported="false"  android:screenOrientation="portrait" />
+        <!-- 인트로 -->
+        <activity android:name=".ui.intro.IntroTrainingActivity" android:exported="false"  android:screenOrientation="portrait" />
+        <!-- 1주차 -->
+        <activity android:name=".ui.emotion.SelectActivity" android:exported="false"  android:screenOrientation="portrait" />
+        <activity android:name=".ui.emotion.AnchorActivity" android:exported="false"  android:screenOrientation="portrait" />
+        <activity android:name=".ui.emotion.ArcActivity" android:exported="false"  android:screenOrientation="portrait" />
+        <activity android:name=".ui.emotion.SelectReportActivity" android:exported="false"  android:screenOrientation="portrait" />
+        <activity android:name=".ui.emotion.ArcReportActivity" android:exported="false"  android:screenOrientation="portrait" />
+        <activity android:name=".ui.emotion.AnchorReportActivity" android:exported="false"  android:screenOrientation="portrait" />
+
+        <activity android:name=".ui.body.BodyTrainingIntroActivity" android:exported="false"  android:screenOrientation="portrait" />
+        <activity android:name=".ui.body.BodyTrainingDetailActivity" android:exported="false"  android:screenOrientation="portrait" />
+        <activity android:name=".ui.body.BodyTrainingPracticeActivity" android:exported="false"  android:screenOrientation="portrait" />
+        <activity android:name=".ui.body.BodyTrainingRecordActivity" android:exported="false"  android:screenOrientation="portrait"/>
+        <activity android:name=".ui.body.BodyReportActivity" android:exported="false"  android:screenOrientation="portrait" />
+        <activity android:name=".ui.body.BodyTrainingRecordViewActivity" android:exported="false"  android:screenOrientation="portrait"/>
+        <activity android:name=".ui.body.BodyTrainingReportDetailActivity" android:exported="false"  android:screenOrientation="portrait"/>
+
+        <activity android:name=".ui.mind.ArtActivity" android:exported="false"  android:screenOrientation="portrait" />
+        <activity android:name=".ui.mind.ArtReportActivity" android:exported="false"  android:screenOrientation="portrait" />
+        <activity android:name=".ui.mind.TrapActivity" android:exported="false"  android:screenOrientation="portrait" />
+        <activity android:name=".ui.mind.TrapReportActivity" android:exported="false"  android:screenOrientation="portrait" />
+        <activity android:name=".ui.mind.AutoActivity" android:exported="false"  android:screenOrientation="portrait" />
+        <activity android:name=".ui.mind.AutoReportActivity" android:exported="false"  android:screenOrientation="portrait" />
+        <activity android:name=".ui.mind.AutoTrapReportActivity" android:exported="false"  android:screenOrientation="portrait" />
+
+        <activity android:name=".ui.expression.AvoidanceActivity" android:exported="false"  android:screenOrientation="portrait" />
+
+        <activity android:name=".ui.weekly.WeeklyReportActivity" android:exported="false"  android:screenOrientation="portrait" />
+
+        <activity android:name=".ui.expression.AvoidanceQuizActivity" android:exported="false"  android:screenOrientation="portrait" />
+        <activity android:name=".ui.expression.StayActivity" android:exported="false"  android:screenOrientation="portrait" />
+
+        <activity android:name=".ui.expression.DrivenActionQuizActivity" android:exported="false"  android:screenOrientation="portrait" />
+        <activity android:name=".ui.expression.OppositeActionActivity" android:exported="false"  android:screenOrientation="portrait" />
+        <activity android:name=".ui.expression.AlternativeActionActivity" android:exported="false"  android:screenOrientation="portrait" />
+        <activity android:name=".ui.weekly.WeeklyActivity" android:exported="false"  android:screenOrientation="portrait" />
+
+        <activity android:name=".ui.emotion.EmotionReportActivity" android:exported="false"  android:screenOrientation="portrait" />
+        <activity android:name=".ui.mind.MindReportActivity" android:exported="false"  android:screenOrientation="portrait" />
+        <activity android:name=".ui.expression.ExpressionReportActivity" android:exported="false"  android:screenOrientation="portrait" />
+
+        <activity android:name=".ui.expression.AvoidanceGuideActivity" android:exported="false"  android:screenOrientation="portrait" />
+        <activity android:name=".ui.expression.DrivenActionGuideActivity" android:exported="false"  android:screenOrientation="portrait" />
+        <activity android:name=".ui.expression.AvoidanceReportActivity" android:exported="false"  android:screenOrientation="portrait" />
+        <activity android:name=".ui.expression.OppositeReportActivity" android:exported="false"  android:screenOrientation="portrait" />
+        <activity android:name=".ui.expression.StayReportActivity" android:exported="false"  android:screenOrientation="portrait" />
+        <activity android:name=".ui.expression.AlternativeReportActivity" android:exported="false"  android:screenOrientation="portrait" />
+
+        <activity android:name=".ui.chat.ChatActivity" android:exported="false"  android:screenOrientation="portrait" />
+
+
+<!--        <activity android:name=".AddTester"-->
+<!--            android:exported="true">-->
+<!--        <intent-filter>-->
+<!--            <action android:name="android.intent.action.MAIN" />-->
+<!--            <category android:name="android.intent.category.LAUNCHER" />-->
+<!--        </intent-filter>-->
+<!--        </activity>-->
+    </application>
+</manifest>

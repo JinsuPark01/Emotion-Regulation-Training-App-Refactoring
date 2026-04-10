@@ -1,0 +1,43 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textTitleArcR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="R: 내 신체와 감정의 반응"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/button_color_emotion"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:id="@+id/textDescriptionArcR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="정서경험에 대한 반응은 단순히 감정만이 아니라, 떠오르는 생각, 느껴지는 기분, 몸의 반응 그리고 실제로 한 행동까지 포함돼요.\n사건이나 상황을 통해 내 마음과 몸은 어떤 반응과 행동을 했는지 떠올려보며 기록해 보세요."
+            android:textSize="16sp"
+            android:textColor="#555555"
+            android:lineSpacingExtra="6dp"
+            android:layout_marginBottom="20dp" />
+
+        <EditText
+            android:id="@+id/editReactionArcR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="감정과 신체반응을 떠올려 보세요"
+            android:background="@drawable/edit_text_background"
+            android:padding="12dp"
+            android:textSize="16sp"
+            android:layout_marginBottom="16dp" />
+
+    </LinearLayout>
+</ScrollView>

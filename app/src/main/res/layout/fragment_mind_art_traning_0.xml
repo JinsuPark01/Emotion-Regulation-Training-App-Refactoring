@@ -1,0 +1,33 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <!-- 제목 -->
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="정서 훈련 소개"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_marginBottom="12dp" />
+
+    <!-- 설명 -->
+    <TextView
+        android:id="@+id/textDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🧠 감정은 어떻게 만들어질까요?\n우리가 느끼는 감정은, ‘상황 자체’보다 그 상황을 어떻게 해석했는가에 따라 달라져요.\n\n📌 예를 들어,\n물이 반쯤 찬 컵을 보고\n- “아직 반이나 남았네 😊” 라고 생각하면 기분이 좋아지고,\n- “벌써 반이나 줄었어 😕” 라고 생각하면 아쉬워지죠.\n이처럼 감정은 ‘생각’에서 출발할 수 있습니다.\n\n👀 그런데 왜 이런 생각이 떠오를까요?\n우리는 모두 자신만의 방식으로 세상을 해석하며 살아갑니다.\n이 해석은 오랫동안 반복되면서 ‘자동적으로’ 떠오르는 생각이 되기도 해요.\n\n🛠 이번 훈련에서는\n익숙한 해석을 억지로 고치려는 게 아니라,\n“아, 이렇게도 볼 수 있구나” 하는 다른 관점을 연습해보는 시간이에요.\n\n🌱 지금부터 내가 상황을 어떻게 해석하고 있는지,\n그리고 그 해석이 내 감정에 어떤 영향을 주는지 천천히 살펴봅시다."
+
+        android:textSize="16sp"
+        android:textColor="#555555"
+        android:lineSpacingExtra="6dp" />
+</LinearLayout>
+</ScrollView>

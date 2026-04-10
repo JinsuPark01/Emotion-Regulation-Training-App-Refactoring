@@ -1,0 +1,31 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <!-- 제목 -->
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="정서 훈련 소개"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_marginBottom="12dp" />
+
+    <!-- 설명 -->
+    <TextView
+        android:id="@+id/textDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🧩 지금까지는 자동적 사고와 ‘생각의 덫’에 대해 알아봤어요.\n이제는 그 생각들이 실제로 우리의 ‘정서(감정)’와 어떻게 연결되는지도 살펴보려 해요.\n\n📝 이번 기록에서는\n어려운 감정을 느꼈던 순간이나, 다시 떠올라서 마음이 남는 상황을 적어봅시다.\n최근 일이 아니어도 괜찮고, 되돌아보고 싶은 장면도 좋아요.\n\n기록할 때는 이렇게 생각해보세요 👇\n1) 언제, 어디서, 누구와, 무엇을 하고 있었는지 (상황)\n2) 그때 머릿속에 자동으로 스쳐간 생각은 무엇이었는지 (자동적 사고)\n3) 그 생각 때문에 어떤 감정을 느꼈는지, 그리고 강도는 어느 정도였는지 (감정·강도)\n\n🔎 그런 다음\n지금까지 연습했던 내용들을 떠올리면서\n그 안에 ‘생각의 덫’이 숨어있지 않았는지 찾아보고,\n💡 “그때 이렇게도 볼 수 있었겠다” 하는 대안적 평가까지 만들어봅시다."
+        android:textSize="16sp"
+        android:textColor="#555555"
+        android:lineSpacingExtra="6dp" />
+    </LinearLayout></ScrollView>

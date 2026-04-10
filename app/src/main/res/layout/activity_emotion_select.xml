@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+    <!-- 제목 영역 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_back_arrow" />
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="상태 기록하기"
+            android:textSize="18sp"
+            android:layout_marginStart="8dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#DDDDDD" />
+    <!-- ScrollView 콘텐츠 영역 -->
+    <ScrollView
+        android:id="@+id/scrollContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="40dp"
+        android:fillViewport="true">
+
+        <!-- 첫 번째 콘텐츠 영역 -->
+        <LinearLayout
+            android:id="@+id/contentView"
+            android:layout_width="match_parent"
+            android:layout_height="605dp"
+            android:gravity="top"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <!-- 마음의 느낌 제목 -->
+            <TextView
+                android:id="@+id/tvMindTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:text="마음의 느낌"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- 마음의 느낌 선택 버튼 (아이콘 + 텍스트, 5개 가로 나열) -->
+            <LinearLayout
+                android:id="@+id/mindFeelingGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:orientation="horizontal"
+                android:weightSum="5">
+
+                <!-- 매우 나쁨 -->
+                <LinearLayout
+                    android:id="@+id/btnMind1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@drawable/ic_mind1" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="매우 안 좋음"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <!-- 나쁨 -->
+                <LinearLayout
+                    android:id="@+id/btnMind2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@drawable/ic_mind2" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="안 좋음"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <!-- 보통 -->
+                <LinearLayout
+                    android:id="@+id/btnMind3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@drawable/ic_mind3" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="보통"
+                        android:textSize="10sp" />
+                </LinearLayout>
+                <!-- 좋음 -->
+                <LinearLayout
+                    android:id="@+id/btnMind4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@drawable/ic_mind4" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="좋음"
+                        android:textSize="10sp" />
+                </LinearLayout>
+                <!-- 슬픔 -->
+                <LinearLayout
+                    android:id="@+id/btnMind5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@drawable/ic_mind5" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="매우 좋음"
+                        android:textSize="10sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <!-- 몸의 느낌 제목 -->
+            <TextView
+                android:id="@+id/tvBodyTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:text="몸의 느낌"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- 몸의 느낌 선택 버튼 (아이콘 + 텍스트, 5개 가로 나열) -->
+            <LinearLayout
+                android:id="@+id/bodyFeelingGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:orientation="horizontal"
+                android:weightSum="5">
+
+                <!-- 매우 나른함 -->
+                <LinearLayout
+                    android:id="@+id/btnBody1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@drawable/ic_body1" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="매우 이완됨"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <!-- 나쁨 -->
+                <LinearLayout
+                    android:id="@+id/btnBody2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@drawable/ic_body2" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="이완됨"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <!-- 보통 -->
+                <LinearLayout
+                    android:id="@+id/btnBody3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@drawable/ic_body3" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="보통"
+                        android:textSize="10sp" />
+                </LinearLayout>
+                <!-- 활기 -->
+                <LinearLayout
+                    android:id="@+id/btnBody4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@drawable/ic_body4" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="각성됨"
+                        android:textSize="10sp" />
+                </LinearLayout>
+                <!-- 슬픔 -->
+                <LinearLayout
+                    android:id="@+id/btnBody5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@drawable/ic_body5" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="매우 각성됨"
+                        android:textSize="10sp" />
+                </LinearLayout>
+            </LinearLayout>
+            <!-- 상태 기록하기란? -->
+            <LinearLayout
+                android:id="@+id/accordionWhatIS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:id="@+id/tvWhatIs"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="상태 기록하기란?"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/iconArrow"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_back_arrow"
+                    android:rotation="270" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#DDDDDD" />
+
+
+            <TextView
+                android:id="@+id/tvWhatIsDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="하루 두 번, 지금 이 순간 나의 마음과 몸의 상태를 기록하는 활동이에요.\n내가 지금 느끼는 마음과 신체에 대한 반응을 기록하면서, 나의 정서 패턴을 스스로 인식할 수 있도록 돕는 훈련이에요."
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+            <!-- 어떻게 진행하나요? -->
+            <LinearLayout
+                android:id="@+id/accordionHowTo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:id="@+id/tvHowTo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="어떻게 진행하나요?"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/iconArrowHowTo"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_back_arrow"
+                    android:rotation="270" />
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#DDDDDD" />
+
+            <LinearLayout
+                android:id="@+id/layoutHowToDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="\n&lt;마음 느낌 선택 활동 가이드&gt;"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:paddingBottom="4dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🌤 우리는 하루에도 여러 번 감정을 느껴요. 기쁠 수도 있고, 속상하거나 불편할 수도, 아무 감정이 느껴지지 않을 수도 있어요. 이 활동에서는 지금 이 순간 내 마음의 상태가 어떤지 살펴보는 것이 목적이에요.\n\n📌 예를 들어\n- 무기력하거나 우울할 때는 ‘나쁨’에 가까울 수 있어요.\n- 마음이 편안하거나 기쁠 때는 ‘좋음’에 가까울 수 있겠죠.\n- 어떤 감정도 뚜렷하게 느껴지지 않을 때는 ‘보통’을 선택해도 괜찮아요.\n\n이처럼 감정의 분위기를 느끼고 표현해 보는 것이 👉 ‘마음 느낌 선택’ 활동입니다."
+                    android:textSize="14sp"
+                    android:paddingBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="\n&lt;몸의 느낌 선택 활동 가이드&gt;"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:paddingBottom="4dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="💗 감정을 느낄 때 우리 몸도 함께 반응해요.\n가슴이 두근거리거나, 기운이 빠지거나, 어깨가 굳어지는 것처럼요.\n그런데 이런 몸의 반응은 감정의 좋고 나쁨과는 꼭 일치하지 않을 수도 있어요.\n\n📌 예를 들어,\n부정적인 감정이라도\n- 우울할 때는 몸이 이완되고 에너지가 낮을 수 있고,\n- 분노할 때는 몸이 각성되고 에너지가 높을 수 있어요.\n\n또 긍정적인 감정이라도\n- 기쁠 때는 몸이 활기차고 에너지가 높을 수 있고,\n- 편안할 때는 몸이 차분하고 에너지가 낮을 수 있어요.\n\n👉 즉, 감정의 방향(좋음/나쁨)과 몸의 각성 정도(높음/낮음)는 항상 같이 움직이지 않아요.\n이 활동에서는 감정과는 별도로, 지금 내 몸이 얼마나 깨어 있는지,\n즉 ‘몸의 각성 수준’을 체크해 봅니다."
+                    android:textSize="14sp"/>
+            </LinearLayout>
+
+            <!-- 어떻게 진행하나요? -->
+            <LinearLayout
+                android:id="@+id/accordionCaution"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:id="@+id/tvCaution"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="*필독* 주의 사항"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#ff4802" />
+
+                <ImageView
+                    android:id="@+id/iconArrowCaution"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_back_arrow"
+                    android:rotation="270" />
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#DDDDDD" />
+
+            <LinearLayout
+                android:id="@+id/layoutCautionDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="⚠️ 상태 기록하기는 오전 11~12시 오후 7~8시에 기록 가능하고\n해당 시간 이후에는 기록할 수 없으니 꼭 시간 내에 실시해 주세요!"
+                    android:textSize="14sp"
+                    android:paddingBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="⚠️ 상태 기록하기는 밀린 기록에 대해 다시 작성할 수 없습니다.\n(다른 훈련은 깜빡해서 밀렸더라도 해당 주차에는 기록이 가능합니다.)"
+                    android:textSize="14sp"
+                    android:paddingBottom="8dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <!-- 하단 네비게이션 바 -->
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- 위쪽 연한 회색 테두리 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#DDDDDD" />
+
+        <!-- 네비게이션 바 본체 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:orientation="horizontal"
+            android:background="#FFFFFF"
+            android:gravity="center_vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <TextView
+                android:id="@+id/btnSelect"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:gravity="center"
+                android:drawablePadding="4dp"
+                android:text="감정 선택하기"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:background="@drawable/bg_round_green_button" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

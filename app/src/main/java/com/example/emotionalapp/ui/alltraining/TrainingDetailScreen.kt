@@ -19,8 +19,6 @@ import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -36,6 +34,7 @@ import com.example.emotionalapp.ui.detail.TrainingDetailItemCard
 @Composable
 fun TrainingDetailScreen(
     pageTitle: String,
+    selectedTab: TrainingDetailTab,
     recordItems: List<DetailTrainingItem>,
     trainingItems: List<DetailTrainingItem>,
     onBackClick: () -> Unit,
@@ -43,9 +42,7 @@ fun TrainingDetailScreen(
     onTrainingTabClick: () -> Unit,
     onDetailItemClick: (DetailTrainingItem) -> Unit
 ) {
-    val selectedTab = remember { mutableStateOf(DetailTab.TRAINING) }
-
-    val currentItems = if (selectedTab.value == DetailTab.RECORD) {
+    val currentItems = if (selectedTab == TrainingDetailTab.RECORD) {
         recordItems
     } else {
         trainingItems
@@ -63,15 +60,9 @@ fun TrainingDetailScreen(
         )
 
         DetailTabSection(
-            selectedTab = selectedTab.value,
-            onRecordTabClick = {
-                selectedTab.value = DetailTab.RECORD
-                onRecordTabClick()
-            },
-            onTrainingTabClick = {
-                selectedTab.value = DetailTab.TRAINING
-                onTrainingTabClick()
-            }
+            selectedTab = selectedTab,
+            onRecordTabClick = onRecordTabClick,
+            onTrainingTabClick = onTrainingTabClick
         )
 
         LazyColumn(
@@ -123,7 +114,7 @@ private fun DetailTopBar(
 
 @Composable
 private fun DetailTabSection(
-    selectedTab: DetailTab,
+    selectedTab: TrainingDetailTab,
     onRecordTabClick: () -> Unit,
     onTrainingTabClick: () -> Unit
 ) {
@@ -137,14 +128,14 @@ private fun DetailTabSection(
         ) {
             DetailTabItem(
                 text = "기록 보기",
-                selected = selectedTab == DetailTab.RECORD,
+                selected = selectedTab == TrainingDetailTab.RECORD,
                 onClick = onRecordTabClick,
                 modifier = Modifier.weight(1f)
             )
 
             DetailTabItem(
                 text = "훈련 하기",
-                selected = selectedTab == DetailTab.TRAINING,
+                selected = selectedTab == TrainingDetailTab.TRAINING,
                 onClick = onTrainingTabClick,
                 modifier = Modifier.weight(1f)
             )
@@ -189,35 +180,30 @@ private fun DetailTabItem(
     }
 }
 
-enum class DetailTab {
-    RECORD,
-    TRAINING
-}
-
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun TrainingDetailScreenPreview() {
     val recordItems = listOf(
         DetailTrainingItem(
             id = "r1",
-            title = "기록 보기 1",
-            subtitle = "기록 예시입니다",
-            trainingType = TrainingType.EMOTION_TRAINING,
+            title = "2026-04-11",
+            subtitle = "인지적 평가",
+            trainingType = TrainingType.MIND_WATCHING_TRAINING,
             progressNumerator = "1",
-            progressDenominator = "4",
-            currentProgress = "1/4",
-            backgroundColorResId = R.color.button_color_emotion,
+            progressDenominator = "1",
+            currentProgress = "보기",
+            backgroundColorResId = R.color.button_color_mind,
             targetActivityClass = null
         ),
         DetailTrainingItem(
             id = "r2",
-            title = "기록 보기 2",
-            subtitle = "기록 예시입니다",
-            trainingType = TrainingType.EMOTION_TRAINING,
-            progressNumerator = "2",
-            progressDenominator = "4",
-            currentProgress = "2/4",
-            backgroundColorResId = R.color.button_color_emotion,
+            title = "2026-04-10",
+            subtitle = "생각의 덫",
+            trainingType = TrainingType.MIND_WATCHING_TRAINING,
+            progressNumerator = "1",
+            progressDenominator = "1",
+            currentProgress = "보기",
+            backgroundColorResId = R.color.button_color_mind,
             targetActivityClass = null
         )
     )
@@ -225,30 +211,31 @@ fun TrainingDetailScreenPreview() {
     val trainingItems = listOf(
         DetailTrainingItem(
             id = "t1",
-            title = "훈련 하기 1",
-            subtitle = "훈련 예시입니다",
-            trainingType = TrainingType.EMOTION_TRAINING,
+            title = "인지적 평가",
+            subtitle = "인지적 평가 교육 및 모호한 그림 해석을 진행합니다.",
+            trainingType = TrainingType.MIND_WATCHING_TRAINING,
             progressNumerator = "3",
             progressDenominator = "14",
             currentProgress = "3/14",
-            backgroundColorResId = R.color.button_color_emotion,
+            backgroundColorResId = R.color.button_color_mind,
             targetActivityClass = null
         ),
         DetailTrainingItem(
             id = "t2",
-            title = "훈련 하기 2",
-            subtitle = "훈련 예시입니다",
-            trainingType = TrainingType.EMOTION_TRAINING,
+            title = "생각의 덫",
+            subtitle = "생각의 덫을 파악하고 풀어내봅시다.",
+            trainingType = TrainingType.MIND_WATCHING_TRAINING,
             progressNumerator = "잠김",
             progressDenominator = "잠김",
             currentProgress = "잠김",
-            backgroundColorResId = R.color.button_color_emotion,
+            backgroundColorResId = R.color.button_color_mind,
             targetActivityClass = null
         )
     )
 
     TrainingDetailScreen(
-        pageTitle = "1주차 - 정서인식 훈련",
+        pageTitle = "마음보기 훈련",
+        selectedTab = TrainingDetailTab.TRAINING,
         recordItems = recordItems,
         trainingItems = trainingItems,
         onBackClick = {},

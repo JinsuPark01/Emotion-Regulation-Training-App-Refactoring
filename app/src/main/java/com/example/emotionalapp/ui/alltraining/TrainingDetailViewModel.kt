@@ -36,6 +36,7 @@ class TrainingDetailViewModel(
     fun load(menuType: TrainingMenuType, menuTitle: String) {
         _uiState.value = TrainingDetailUiState(
             pageTitle = menuTitle,
+            selectedTab = TrainingDetailTab.TRAINING,
             isLoading = true
         )
 
@@ -46,6 +47,7 @@ class TrainingDetailViewModel(
                 .onSuccess { progressData ->
                     _uiState.value = TrainingDetailUiState(
                         pageTitle = menuTitle,
+                        selectedTab = TrainingDetailTab.TRAINING,
                         recordItems = emptyList(),
                         trainingItems = loadTrainingItems(
                             type = menuType,
@@ -58,10 +60,45 @@ class TrainingDetailViewModel(
                 .onFailure { e ->
                     _uiState.value = TrainingDetailUiState(
                         pageTitle = menuTitle,
+                        selectedTab = TrainingDetailTab.TRAINING,
                         recordItems = emptyList(),
                         trainingItems = emptyList(),
                         isLoading = false,
                         errorMessage = e.message ?: "데이터를 불러오지 못했습니다."
+                    )
+                }
+        }
+    }
+
+    fun onTrainingTabClick() {
+        _uiState.value = _uiState.value.copy(
+            selectedTab = TrainingDetailTab.TRAINING
+        )
+    }
+
+    fun onRecordTabClick(menuType: TrainingMenuType) {
+        if (_uiState.value.recordItems.isNotEmpty()) {
+            _uiState.value = _uiState.value.copy(
+                selectedTab = TrainingDetailTab.RECORD
+            )
+            return
+        }
+
+        viewModelScope.launch {
+            val result = repository.getRecordItems(menuType)
+
+            result
+                .onSuccess { items ->
+                    _uiState.value = _uiState.value.copy(
+                        selectedTab = TrainingDetailTab.RECORD,
+                        recordItems = items,
+                        errorMessage = null
+                    )
+                }
+                .onFailure { e ->
+                    _uiState.value = _uiState.value.copy(
+                        selectedTab = TrainingDetailTab.RECORD,
+                        errorMessage = e.message ?: "기록 데이터를 불러오지 못했습니다."
                     )
                 }
         }

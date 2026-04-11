@@ -62,14 +62,17 @@ class TrainingDetailFragment : Fragment() {
 
                 TrainingDetailScreen(
                     pageTitle = uiState.pageTitle,
+                    selectedTab = uiState.selectedTab,
                     recordItems = uiState.recordItems,
                     trainingItems = uiState.trainingItems,
                     onBackClick = {
                         parentFragmentManager.popBackStack()
                     },
                     onRecordTabClick = {
+                        viewModel.onRecordTabClick(menuType)
                     },
                     onTrainingTabClick = {
+                        viewModel.onTrainingTabClick()
                     },
                     onDetailItemClick = { clickedItem ->
                         if (clickedItem.currentProgress == "잠김") {
@@ -79,7 +82,8 @@ class TrainingDetailFragment : Fragment() {
 
                         if (
                             clickedItem.progressDenominator == clickedItem.progressNumerator &&
-                            clickedItem.currentProgress != "GO"
+                            clickedItem.currentProgress != "GO" &&
+                            clickedItem.currentProgress != "보기"
                         ) {
                             Toast.makeText(requireContext(), "모두 완료한 훈련입니다.", Toast.LENGTH_SHORT).show()
                             return@TrainingDetailScreen

@@ -43,7 +43,8 @@ class TrainingDetailFragment : Fragment() {
     }
 
     private val menuType: TrainingMenuType by lazy {
-        TrainingMenuType.valueOf(arguments?.getString(ARG_MENU_TYPE).orEmpty())
+        arguments?.getString(ARG_MENU_TYPE)?.let { TrainingMenuType.valueOf(it) }
+            ?: TrainingMenuType.INTRO
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -13,7 +13,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.emotionalapp.R
 
-class BodyTrainingDetailActivity : AppCompatActivity() {
+class BodyExplanationActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -142,7 +142,7 @@ class BodyTrainingDetailActivity : AppCompatActivity() {
     }
 
     private fun goToPractice(trainingId: String, trainingTitle: String) {
-        val intent = Intent(this, BodyTrainingPracticeActivity::class.java).apply {
+        val intent = Intent(this, BodyPracticeActivity::class.java).apply {
             putExtra("TRAINING_ID", trainingId)
             putExtra("TRAINING_TITLE", trainingTitle)
         }

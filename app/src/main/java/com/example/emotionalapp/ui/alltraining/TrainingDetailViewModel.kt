@@ -6,8 +6,8 @@ import com.example.emotionalapp.R
 import com.example.emotionalapp.data.DetailTrainingItem
 import com.example.emotionalapp.data.TrainingMenuType
 import com.example.emotionalapp.data.TrainingType
-import com.example.emotionalapp.ui.body.BodyTrainingDetailActivity
-import com.example.emotionalapp.ui.body.BodyTrainingIntroActivity
+import com.example.emotionalapp.ui.body.BodyExplanationActivity
+import com.example.emotionalapp.ui.body.BodyIntroActivity
 import com.example.emotionalapp.ui.emotion.AnchorActivity
 import com.example.emotionalapp.ui.emotion.ArcActivity
 import com.example.emotionalapp.ui.emotion.SelectActivity
@@ -218,7 +218,7 @@ class TrainingDetailViewModel(
                         progressDenominator = "1",
                         currentProgress = getGoProgress("1"),
                         backgroundColorResId = R.color.button_color_body,
-                        targetActivityClass = BodyTrainingIntroActivity::class.java
+                        targetActivityClass = BodyIntroActivity::class.java
                     ),
                     DetailTrainingItem(
                         id = "bt_detail_002",
@@ -229,7 +229,7 @@ class TrainingDetailViewModel(
                         progressDenominator = denominatorArr[1],
                         currentProgress = getCurrentProgress("bt_detail_002", denominatorArr[1], countCompleteMap),
                         backgroundColorResId = R.color.button_color_body,
-                        targetActivityClass = BodyTrainingDetailActivity::class.java
+                        targetActivityClass = BodyExplanationActivity::class.java
                     ),
                     DetailTrainingItem(
                         id = "bt_detail_003",
@@ -240,7 +240,7 @@ class TrainingDetailViewModel(
                         progressDenominator = denominatorArr[2],
                         currentProgress = getCurrentProgress("bt_detail_003", denominatorArr[2], countCompleteMap),
                         backgroundColorResId = R.color.button_color_body,
-                        targetActivityClass = BodyTrainingDetailActivity::class.java
+                        targetActivityClass = BodyExplanationActivity::class.java
                     ),
                     DetailTrainingItem(
                         id = "bt_detail_004",
@@ -251,7 +251,7 @@ class TrainingDetailViewModel(
                         progressDenominator = denominatorArr[3],
                         currentProgress = getCurrentProgress("bt_detail_004", denominatorArr[3], countCompleteMap),
                         backgroundColorResId = R.color.button_color_body,
-                        targetActivityClass = BodyTrainingDetailActivity::class.java
+                        targetActivityClass = BodyExplanationActivity::class.java
                     ),
                     DetailTrainingItem(
                         id = "bt_detail_005",
@@ -262,7 +262,7 @@ class TrainingDetailViewModel(
                         progressDenominator = denominatorArr[4],
                         currentProgress = getCurrentProgress("bt_detail_005", denominatorArr[4], countCompleteMap),
                         backgroundColorResId = R.color.button_color_body,
-                        targetActivityClass = BodyTrainingDetailActivity::class.java
+                        targetActivityClass = BodyExplanationActivity::class.java
                     ),
                     DetailTrainingItem(
                         id = "bt_detail_006",
@@ -273,7 +273,7 @@ class TrainingDetailViewModel(
                         progressDenominator = denominatorArr[5],
                         currentProgress = getCurrentProgress("bt_detail_006", denominatorArr[5], countCompleteMap),
                         backgroundColorResId = R.color.button_color_body,
-                        targetActivityClass = BodyTrainingDetailActivity::class.java
+                        targetActivityClass = BodyExplanationActivity::class.java
                     ),
                     DetailTrainingItem(
                         id = "bt_detail_007",
@@ -284,7 +284,7 @@ class TrainingDetailViewModel(
                         progressDenominator = denominatorArr[6],
                         currentProgress = getCurrentProgress("bt_detail_007", denominatorArr[6], countCompleteMap),
                         backgroundColorResId = R.color.button_color_body,
-                        targetActivityClass = BodyTrainingDetailActivity::class.java
+                        targetActivityClass = BodyExplanationActivity::class.java
                     ),
                     DetailTrainingItem(
                         id = "bt_detail_008",
@@ -295,7 +295,7 @@ class TrainingDetailViewModel(
                         progressDenominator = denominatorArr[7],
                         currentProgress = getCurrentProgress("bt_detail_008", denominatorArr[7], countCompleteMap),
                         backgroundColorResId = R.color.button_color_body,
-                        targetActivityClass = BodyTrainingDetailActivity::class.java
+                        targetActivityClass = BodyExplanationActivity::class.java
                     )
                 )
             }

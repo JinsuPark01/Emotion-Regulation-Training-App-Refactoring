@@ -13,7 +13,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import java.text.SimpleDateFormat
 import java.util.*
 
-class BodyTrainingReportDetailActivity : AppCompatActivity() {
+class BodyTrainingReportActivity : AppCompatActivity() {
 
     private fun getTrainingNameById(id: String): String {
         return when (id) {

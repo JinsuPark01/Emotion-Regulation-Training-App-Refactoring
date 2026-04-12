@@ -11,7 +11,7 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.emotionalapp.R
 
-class BodyTrainingPracticeActivity : AppCompatActivity() {
+class BodyPracticeActivity : AppCompatActivity() {
 
     private lateinit var btnStart: Button
     private lateinit var btnStopPractice: Button
@@ -84,7 +84,7 @@ class BodyTrainingPracticeActivity : AppCompatActivity() {
                 tvCurrentTime.text = formatTime(progressBar.max)
 
                 // ⏩ 자동으로 소감 작성 페이지로 이동
-                val intent = Intent(this, BodyTrainingRecordActivity::class.java)
+                val intent = Intent(this, BodyRecordActivity::class.java)
                 intent.putExtra("TRAINING_ID", trainingIdStr)
                 startActivity(intent)
             }
@@ -111,7 +111,7 @@ class BodyTrainingPracticeActivity : AppCompatActivity() {
                 videoView.pause()
                 handler.removeCallbacks(updateProgressRunnable)
             }
-            val intent = Intent(this, BodyTrainingRecordActivity::class.java)
+            val intent = Intent(this, BodyRecordActivity::class.java)
             intent.putExtra("TRAINING_ID", trainingIdStr)
             startActivity(intent)
         }

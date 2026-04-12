@@ -3,10 +3,8 @@ package com.example.emotionalapp.ui.body
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.emotionalapp.R
@@ -46,7 +44,7 @@ class BodyReportActivity : BottomNavActivity() {
             val intent = if (reportItem.name.contains("주간 점검 기록 보기")) {
                 Intent(this, WeeklyReportActivity::class.java)
             } else {
-                Intent(this, BodyTrainingReportDetailActivity::class.java).apply {
+                Intent(this, BodyTrainingReportActivity::class.java).apply {
                     putExtra("trainingId", reportItem.trainingId)
                 }
             }

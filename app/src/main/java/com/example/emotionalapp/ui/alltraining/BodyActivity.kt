@@ -3,7 +3,6 @@ package com.example.emotionalapp.ui.alltraining
 
 import android.app.AlertDialog
 import android.content.Intent
-import android.icu.lang.UCharacter.GraphemeClusterBreak.L
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -15,8 +14,8 @@ import com.example.emotionalapp.R
 import com.example.emotionalapp.adapter.DetailTrainingAdapter
 import com.example.emotionalapp.data.DetailTrainingItem
 import com.example.emotionalapp.data.TrainingType
-import com.example.emotionalapp.ui.body.BodyTrainingDetailActivity
-import com.example.emotionalapp.ui.body.BodyTrainingIntroActivity
+import com.example.emotionalapp.ui.body.BodyExplanationActivity
+import com.example.emotionalapp.ui.body.BodyIntroActivity
 import com.example.emotionalapp.ui.body.BodyReportActivity
 import com.example.emotionalapp.ui.open.BottomNavActivity
 import com.example.emotionalapp.ui.weekly.WeeklyActivity
@@ -194,7 +193,7 @@ class BodyActivity : BottomNavActivity() {
                 progressDenominator = "1",
                 currentProgress = "GO",
                 R.color.button_color_body,
-                targetActivityClass = BodyTrainingIntroActivity::class.java
+                targetActivityClass = BodyIntroActivity::class.java
             ),
 
             DetailTrainingItem(
@@ -206,7 +205,7 @@ class BodyActivity : BottomNavActivity() {
                 progressDenominator = denominatorArr[1],
                 currentProgress = getCurrentProgress("bt_detail_002", denominatorArr[1]),
                 R.color.button_color_body,
-                targetActivityClass = BodyTrainingDetailActivity::class.java
+                targetActivityClass = BodyExplanationActivity::class.java
             ),
 
             DetailTrainingItem(
@@ -218,7 +217,7 @@ class BodyActivity : BottomNavActivity() {
                 progressDenominator = denominatorArr[2],
                 currentProgress = getCurrentProgress("bt_detail_003", denominatorArr[2]),
                 R.color.button_color_body,
-                targetActivityClass = BodyTrainingDetailActivity::class.java
+                targetActivityClass = BodyExplanationActivity::class.java
             ),
 
             DetailTrainingItem(
@@ -230,7 +229,7 @@ class BodyActivity : BottomNavActivity() {
                 progressDenominator = denominatorArr[3],
                 currentProgress = getCurrentProgress("bt_detail_004", denominatorArr[3]),
                 R.color.button_color_body,
-                targetActivityClass = BodyTrainingDetailActivity::class.java
+                targetActivityClass = BodyExplanationActivity::class.java
             ),
 
             DetailTrainingItem(
@@ -242,7 +241,7 @@ class BodyActivity : BottomNavActivity() {
                 progressDenominator = denominatorArr[4],
                 currentProgress = getCurrentProgress("bt_detail_005", denominatorArr[4]),
                 R.color.button_color_body,
-                targetActivityClass = BodyTrainingDetailActivity::class.java
+                targetActivityClass = BodyExplanationActivity::class.java
             ),
 
             DetailTrainingItem(
@@ -254,7 +253,7 @@ class BodyActivity : BottomNavActivity() {
                 progressDenominator = denominatorArr[5],
                 currentProgress = getCurrentProgress("bt_detail_006", denominatorArr[5]),
                 R.color.button_color_body,
-                targetActivityClass = BodyTrainingDetailActivity::class.java
+                targetActivityClass = BodyExplanationActivity::class.java
             ),
 
             DetailTrainingItem(
@@ -266,7 +265,7 @@ class BodyActivity : BottomNavActivity() {
                 progressDenominator = denominatorArr[6],
                 currentProgress = getCurrentProgress("bt_detail_007", denominatorArr[6]),
                 R.color.button_color_body,
-                targetActivityClass = BodyTrainingDetailActivity::class.java
+                targetActivityClass = BodyExplanationActivity::class.java
             ),
 
             DetailTrainingItem(
@@ -278,7 +277,7 @@ class BodyActivity : BottomNavActivity() {
                 progressDenominator = denominatorArr[7],
                 currentProgress = getCurrentProgress("bt_detail_008", denominatorArr[7]),
                 R.color.button_color_body,
-                targetActivityClass = BodyTrainingDetailActivity::class.java
+                targetActivityClass = BodyExplanationActivity::class.java
             ),
         )
         detailAdapter.updateData(data)

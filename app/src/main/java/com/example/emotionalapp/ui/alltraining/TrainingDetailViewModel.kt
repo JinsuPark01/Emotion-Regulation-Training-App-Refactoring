@@ -11,7 +11,7 @@ import com.example.emotionalapp.ui.body.BodyTrainingIntroActivity
 import com.example.emotionalapp.ui.emotion.AnchorActivity
 import com.example.emotionalapp.ui.emotion.ArcActivity
 import com.example.emotionalapp.ui.emotion.SelectActivity
-import com.example.emotionalapp.ui.expression.AlternativeActionActivity
+import com.example.emotionalapp.ui.expression.AlternativeActivity
 import com.example.emotionalapp.ui.expression.AvoidanceActivity
 import com.example.emotionalapp.ui.expression.AvoidanceGuideActivity
 import com.example.emotionalapp.ui.expression.DrivenActionGuideActivity
@@ -430,7 +430,7 @@ class TrainingDetailViewModel(
                         progressDenominator = denominatorArr[5],
                         currentProgress = getCurrentProgress("alternative", denominatorArr[5], countCompleteMap),
                         backgroundColorResId = R.color.button_color_expression,
-                        targetActivityClass = AlternativeActionActivity::class.java
+                        targetActivityClass = AlternativeActivity::class.java
                     )
                 )
             }

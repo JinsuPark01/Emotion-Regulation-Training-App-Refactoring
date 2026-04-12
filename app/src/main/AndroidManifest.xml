@@ -73,7 +73,7 @@
 
         <activity android:name=".ui.expression.DrivenActionQuizActivity" android:exported="false"  android:screenOrientation="portrait" />
         <activity android:name=".ui.expression.OppositeActivity" android:exported="false"  android:screenOrientation="portrait" />
-        <activity android:name=".ui.expression.AlternativeActionActivity" android:exported="false"  android:screenOrientation="portrait" />
+        <activity android:name=".ui.expression.AlternativeActivity" android:exported="false"  android:screenOrientation="portrait" />
         <activity android:name=".ui.weekly.WeeklyActivity" android:exported="false"  android:screenOrientation="portrait" />
 
         <activity android:name=".ui.emotion.EmotionReportActivity" android:exported="false"  android:screenOrientation="portrait" />

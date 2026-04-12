@@ -239,7 +239,7 @@ class ExpressionActivity : BottomNavActivity() {
                 progressDenominator = denominatorArr[5],
                 currentProgress = getCurrentProgress("alternative", denominatorArr[5]),
                 backgroundColorResId = R.color.purple_700,
-                targetActivityClass = AlternativeActionActivity::class.java
+                targetActivityClass = AlternativeActivity::class.java
             )
         )
         adapter.updateData(trainingList)

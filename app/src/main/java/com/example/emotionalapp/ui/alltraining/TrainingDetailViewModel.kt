@@ -15,7 +15,7 @@ import com.example.emotionalapp.ui.expression.AlternativeActionActivity
 import com.example.emotionalapp.ui.expression.AvoidanceActivity
 import com.example.emotionalapp.ui.expression.AvoidanceGuideActivity
 import com.example.emotionalapp.ui.expression.DrivenActionGuideActivity
-import com.example.emotionalapp.ui.expression.OppositeActionActivity
+import com.example.emotionalapp.ui.expression.OppositeActivity
 import com.example.emotionalapp.ui.expression.StayActivity
 import com.example.emotionalapp.ui.mind.ArtActivity
 import com.example.emotionalapp.ui.mind.AutoActivity
@@ -419,7 +419,7 @@ class TrainingDetailViewModel(
                         progressDenominator = denominatorArr[4],
                         currentProgress = getCurrentProgress("opposite", denominatorArr[4], countCompleteMap),
                         backgroundColorResId = R.color.button_color_expression,
-                        targetActivityClass = OppositeActionActivity::class.java
+                        targetActivityClass = OppositeActivity::class.java
                     ),
                     DetailTrainingItem(
                         id = "alternative_training",

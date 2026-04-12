@@ -228,7 +228,7 @@ class ExpressionActivity : BottomNavActivity() {
                 progressDenominator = denominatorArr[4],
                 currentProgress = getCurrentProgress("opposite", denominatorArr[4]),
                 backgroundColorResId = R.color.purple_700,
-                targetActivityClass = OppositeActionActivity::class.java
+                targetActivityClass = OppositeActivity::class.java
             ),
             DetailTrainingItem(
                 id = "driven_action_training",

@@ -71,7 +71,7 @@ class TrapActivity : AppCompatActivity() {
                 if (state.saveSuccess) {
                     viewModel.consumeSaveSuccess()
                     Toast.makeText(this@TrapActivity, "생각의 덫이 기록되었습니다.", Toast.LENGTH_SHORT).show()
-                    viewModel.moveToNextPageOrFinish()
+                    finish()
                 }
             }
         }

@@ -153,7 +153,7 @@ class TrapViewModel(
     }
 
     fun shouldSaveAtCurrentPage(): Boolean {
-        return _uiState.value.currentPage == 6
+        return _uiState.value.currentPage == _uiState.value.totalPages - 1
     }
 
     fun saveTraining() {

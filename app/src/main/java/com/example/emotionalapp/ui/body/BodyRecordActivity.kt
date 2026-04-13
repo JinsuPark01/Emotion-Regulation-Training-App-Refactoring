@@ -13,7 +13,6 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.emotionalapp.R
-import com.example.emotionalapp.ui.alltraining.AllTrainingPageActivity
 import com.example.emotionalapp.util.setSingleListener
 import kotlinx.coroutines.launch
 import nl.dionsegijn.konfetti.core.Party
@@ -95,7 +94,6 @@ class BodyRecordActivity : AppCompatActivity() {
                 if (state.saveSuccess) {
                     viewModel.consumeSaveSuccess()
                     Toast.makeText(this@BodyRecordActivity, "소감이 저장되었습니다.", Toast.LENGTH_SHORT).show()
-                    startActivity(Intent(this@BodyRecordActivity, AllTrainingPageActivity::class.java))
                     finish()
                 }
             }

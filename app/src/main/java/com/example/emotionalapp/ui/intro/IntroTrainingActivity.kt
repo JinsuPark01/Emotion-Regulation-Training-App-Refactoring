@@ -12,7 +12,6 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.emotionalapp.R
-import com.example.emotionalapp.ui.alltraining.AllTrainingPageActivity
 
 class IntroTrainingActivity : AppCompatActivity() {
 
@@ -84,8 +83,6 @@ class IntroTrainingActivity : AppCompatActivity() {
                     .setTitle("주의 사항")
                     .setMessage("훈련은 4주(28일)간 진행되며, 1주당 최소 4일은 연습해야 효과가 있습니다.")
                     .setPositiveButton("확인") { _, _ ->
-                        val intent = Intent(this, AllTrainingPageActivity::class.java)
-                        startActivity(intent)
                         finish()
                     }
                     .show()

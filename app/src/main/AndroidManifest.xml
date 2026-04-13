@@ -31,8 +31,6 @@
 
         <activity android:name=".ui.main.MainActivity" android:exported="false"  android:screenOrientation="portrait" />
 
-        <activity android:name=".ui.alltraining.AllTrainingPageActivity" android:exported="false"  android:screenOrientation="portrait" />
-        <activity android:name=".ui.alltraining.DailyTrainingPageActivity" android:exported="false"  android:screenOrientation="portrait" />
         <activity android:name=".ui.alltraining.IntroActivity" android:exported="false"  android:screenOrientation="portrait" />
         <activity android:name=".ui.alltraining.EmotionActivity" android:exported="false"  android:screenOrientation="portrait" />
         <activity android:name=".ui.alltraining.BodyActivity" android:exported="false"  android:screenOrientation="portrait" />

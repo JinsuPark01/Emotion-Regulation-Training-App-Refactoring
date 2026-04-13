@@ -9,7 +9,6 @@ import androidx.core.content.ContextCompat
 import com.example.emotionalapp.R
 import com.example.emotionalapp.data.DrivenActionQuizItem
 import com.example.emotionalapp.databinding.ActivityDrivenActionQuizBinding
-import com.example.emotionalapp.ui.alltraining.AllTrainingPageActivity
 
 class DrivenActionQuizActivity : AppCompatActivity() {
 
@@ -74,7 +73,6 @@ class DrivenActionQuizActivity : AppCompatActivity() {
             .setMessage("정서-주도 행동의 의미를 탐색하고, 스스로의 행동을 돌아봤어요. 이제 감정에 휘둘리는 대신 감정과 함께 걷는 연습이 시작됐어요. 지금처럼 차근차근, 계속 나아가 보아요!")
             .setPositiveButton("확인") { _, _ ->
                 // '확인' 버튼을 누르면 액티비티를 종료합니다.
-                startActivity(Intent(this@DrivenActionQuizActivity, AllTrainingPageActivity::class.java))
                 finish()
             }
             .setCancelable(false) // 팝업 바깥을 눌러도 닫히지 않게 설정

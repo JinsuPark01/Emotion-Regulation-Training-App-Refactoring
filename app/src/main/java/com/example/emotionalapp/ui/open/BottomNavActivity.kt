@@ -9,7 +9,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.emotionalapp.R
-import com.example.emotionalapp.ui.alltraining.AllTrainingPageActivity
 import com.example.emotionalapp.ui.chat.ChatActivity
 
 open class BottomNavActivity : AppCompatActivity() {
@@ -37,9 +36,6 @@ open class BottomNavActivity : AppCompatActivity() {
             ivMyTraining.setColorFilter(Color.parseColor("#00897B"))
         } else {
             btnMyTraining.setOnClickListener {
-                startActivity(Intent(this, AllTrainingPageActivity::class.java))
-                overridePendingTransition(0, 0)
-                finish()
             }
         }
 

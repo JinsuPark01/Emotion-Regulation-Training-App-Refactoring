@@ -9,7 +9,6 @@ import androidx.core.content.ContextCompat
 import com.example.emotionalapp.R
 import com.example.emotionalapp.data.EmotionAvoidanceQuizItem
 import com.example.emotionalapp.databinding.ActivityEmotionAvoidanceQuizBinding
-import com.example.emotionalapp.ui.alltraining.AllTrainingPageActivity
 
 class AvoidanceQuizActivity : AppCompatActivity() {
 
@@ -82,7 +81,6 @@ class AvoidanceQuizActivity : AppCompatActivity() {
             .setMessage("감정을 구분하고, 회피의 효과와 한계를 이해 해봤어요. 단기적 편안함에 머무르지 않고, 장기적인 회복을 위한 첫걸음을 내디딘 결과, 회피를 넘어 감정과 함께 살아가는 연습이 시작됐어요. 지금처럼 차근차근, 계속 나아가 보아요!")
             .setPositiveButton("확인") { _, _ ->
                 // '확인' 버튼을 누르면 액티비티를 종료합니다.
-                startActivity(Intent(this@AvoidanceQuizActivity, AllTrainingPageActivity::class.java))
                 finish()
             }
             .setCancelable(false) // 팝업 바깥을 눌러도 닫히지 않게 설정

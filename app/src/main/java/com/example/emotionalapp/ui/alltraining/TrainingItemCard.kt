@@ -25,10 +25,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.emotionalapp.R
-import com.example.emotionalapp.data.TrainingItem
 import com.example.emotionalapp.data.TrainingMenuItem
 import com.example.emotionalapp.data.TrainingMenuType
-import com.example.emotionalapp.data.TrainingType
 
 @Composable
 fun TrainingItemCard(

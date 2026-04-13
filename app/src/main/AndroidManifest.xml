@@ -27,15 +27,9 @@
         <!-- 회원가입 화면 -->
         <activity android:name=".ui.login_signup.SignUpActivity" android:exported="false"  android:screenOrientation="portrait" />
 
-        <!-- 나의 훈련 목록 화면 -->
-
+        <!-- 전체 훈련 / 상세 훈련 -->
         <activity android:name=".ui.main.MainActivity" android:exported="false"  android:screenOrientation="portrait" />
 
-        <activity android:name=".ui.alltraining.IntroActivity" android:exported="false"  android:screenOrientation="portrait" />
-        <activity android:name=".ui.alltraining.EmotionActivity" android:exported="false"  android:screenOrientation="portrait" />
-        <activity android:name=".ui.alltraining.BodyActivity" android:exported="false"  android:screenOrientation="portrait" />
-        <activity android:name=".ui.alltraining.MindActivity" android:exported="false"  android:screenOrientation="portrait" />
-        <activity android:name=".ui.alltraining.ExpressionActivity" android:exported="false"  android:screenOrientation="portrait" />
         <!-- 인트로 -->
         <activity android:name=".ui.intro.IntroTrainingActivity" android:exported="false"  android:screenOrientation="portrait" />
         <!-- 1주차 -->
@@ -50,7 +44,6 @@
         <activity android:name=".ui.body.BodyExplanationActivity" android:exported="false"  android:screenOrientation="portrait" />
         <activity android:name=".ui.body.BodyPracticeActivity" android:exported="false"  android:screenOrientation="portrait" />
         <activity android:name=".ui.body.BodyRecordActivity" android:exported="false"  android:screenOrientation="portrait"/>
-        <activity android:name=".ui.body.BodyReportActivity" android:exported="false"  android:screenOrientation="portrait" />
         <activity android:name=".ui.body.BodyTrainingReportActivity" android:exported="false"  android:screenOrientation="portrait"/>
 
         <activity android:name=".ui.mind.ArtActivity" android:exported="false"  android:screenOrientation="portrait" />
@@ -73,19 +66,12 @@
         <activity android:name=".ui.expression.AlternativeActivity" android:exported="false"  android:screenOrientation="portrait" />
         <activity android:name=".ui.weekly.WeeklyActivity" android:exported="false"  android:screenOrientation="portrait" />
 
-        <activity android:name=".ui.emotion.EmotionReportActivity" android:exported="false"  android:screenOrientation="portrait" />
-        <activity android:name=".ui.mind.MindReportActivity" android:exported="false"  android:screenOrientation="portrait" />
-        <activity android:name=".ui.expression.ExpressionReportActivity" android:exported="false"  android:screenOrientation="portrait" />
-
         <activity android:name=".ui.expression.AvoidanceGuideActivity" android:exported="false"  android:screenOrientation="portrait" />
         <activity android:name=".ui.expression.DrivenActionGuideActivity" android:exported="false"  android:screenOrientation="portrait" />
         <activity android:name=".ui.expression.AvoidanceReportActivity" android:exported="false"  android:screenOrientation="portrait" />
         <activity android:name=".ui.expression.OppositeReportActivity" android:exported="false"  android:screenOrientation="portrait" />
         <activity android:name=".ui.expression.StayReportActivity" android:exported="false"  android:screenOrientation="portrait" />
         <activity android:name=".ui.expression.AlternativeReportActivity" android:exported="false"  android:screenOrientation="portrait" />
-
-        <activity android:name=".ui.chat.ChatActivity" android:exported="false"  android:screenOrientation="portrait" />
-
 
 <!--        <activity android:name=".AddTester"-->
 <!--            android:exported="true">-->

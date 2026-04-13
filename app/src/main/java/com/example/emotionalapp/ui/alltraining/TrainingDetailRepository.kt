@@ -1,10 +1,23 @@
 package com.example.emotionalapp.ui.alltraining
 
+import androidx.appcompat.app.AppCompatActivity
 import com.example.emotionalapp.R
 import com.example.emotionalapp.data.DetailTrainingItem
 import com.example.emotionalapp.data.TrainingMenuType
 import com.example.emotionalapp.data.TrainingType
+import com.example.emotionalapp.ui.emotion.SelectReportActivity
+import com.example.emotionalapp.ui.emotion.ArcReportActivity
+import com.example.emotionalapp.ui.emotion.AnchorReportActivity
+import com.example.emotionalapp.ui.body.BodyTrainingReportActivity
 import com.example.emotionalapp.ui.mind.AutoTrapReportActivity
+import com.example.emotionalapp.ui.mind.TrapReportActivity
+import com.example.emotionalapp.ui.mind.ArtReportActivity
+import com.example.emotionalapp.ui.mind.AutoReportActivity
+import com.example.emotionalapp.ui.expression.AvoidanceReportActivity
+import com.example.emotionalapp.ui.expression.StayReportActivity
+import com.example.emotionalapp.ui.expression.AlternativeReportActivity
+import com.example.emotionalapp.ui.expression.OppositeReportActivity
+import com.example.emotionalapp.ui.weekly.WeeklyReportActivity
 import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -148,7 +161,8 @@ class TrainingDetailRepository(
                             trainingName = "주간 점검 기록 보기",
                             timestamp = ts,
                             trainingType = TrainingType.EMOTION_TRAINING,
-                            backgroundColorResId = R.color.button_color_emotion
+                            backgroundColorResId = R.color.button_color_emotion,
+                            targetActivityClass = WeeklyReportActivity::class.java
                         )
                     }
             }
@@ -167,7 +181,8 @@ class TrainingDetailRepository(
                             trainingName = "ARC 정서 경험 기록 보기",
                             timestamp = ts,
                             trainingType = TrainingType.EMOTION_TRAINING,
-                            backgroundColorResId = R.color.button_color_emotion
+                            backgroundColorResId = R.color.button_color_emotion,
+                            targetActivityClass = ArcReportActivity::class.java
                         )
                     }
             }
@@ -186,7 +201,8 @@ class TrainingDetailRepository(
                             trainingName = "닻 내리기 기록 보기",
                             timestamp = ts,
                             trainingType = TrainingType.EMOTION_TRAINING,
-                            backgroundColorResId = R.color.button_color_emotion
+                            backgroundColorResId = R.color.button_color_emotion,
+                            targetActivityClass = AnchorReportActivity::class.java
                         )
                     }
             }
@@ -208,7 +224,8 @@ class TrainingDetailRepository(
                     progressDenominator = "1",
                     currentProgress = "보기",
                     backgroundColorResId = R.color.button_color_emotion,
-                    targetActivityClass = null
+                    targetActivityClass = SelectReportActivity::class.java,
+                    reportDateMillis = null
                 )
             )
 
@@ -244,7 +261,8 @@ class TrainingDetailRepository(
                             trainingName = trainingName,
                             timestamp = ts,
                             trainingType = TrainingType.BODY_TRAINING,
-                            backgroundColorResId = R.color.button_color_body
+                            backgroundColorResId = R.color.button_color_body,
+                            targetActivityClass = BodyTrainingReportActivity::class.java
                         )
                     }
             }
@@ -263,7 +281,8 @@ class TrainingDetailRepository(
                             trainingName = "주간 점검 기록 보기",
                             timestamp = ts,
                             trainingType = TrainingType.BODY_TRAINING,
-                            backgroundColorResId = R.color.button_color_body
+                            backgroundColorResId = R.color.button_color_body,
+                            targetActivityClass = WeeklyReportActivity::class.java
                         )
                     }
             }
@@ -287,7 +306,8 @@ class TrainingDetailRepository(
                             trainingName = "주간 점검 기록 보기",
                             timestamp = ts,
                             trainingType = TrainingType.MIND_WATCHING_TRAINING,
-                            backgroundColorResId = R.color.button_color_mind
+                            backgroundColorResId = R.color.button_color_mind,
+                            targetActivityClass = WeeklyReportActivity::class.java
                         )
                     }
             }
@@ -306,7 +326,8 @@ class TrainingDetailRepository(
                             trainingName = "인지적 평가 기록 보기",
                             timestamp = ts,
                             trainingType = TrainingType.MIND_WATCHING_TRAINING,
-                            backgroundColorResId = R.color.button_color_mind
+                            backgroundColorResId = R.color.button_color_mind,
+                            targetActivityClass = ArtReportActivity::class.java
                         )
                     }
             }
@@ -325,7 +346,8 @@ class TrainingDetailRepository(
                             trainingName = "생각의 덫 기록 보기",
                             timestamp = ts,
                             trainingType = TrainingType.MIND_WATCHING_TRAINING,
-                            backgroundColorResId = R.color.button_color_mind
+                            backgroundColorResId = R.color.button_color_mind,
+                            targetActivityClass = TrapReportActivity::class.java
                         )
                     }
             }
@@ -344,7 +366,8 @@ class TrainingDetailRepository(
                             trainingName = "자동적 평가 기록 보기",
                             timestamp = ts,
                             trainingType = TrainingType.MIND_WATCHING_TRAINING,
-                            backgroundColorResId = R.color.button_color_mind
+                            backgroundColorResId = R.color.button_color_mind,
+                            targetActivityClass = AutoReportActivity::class.java
                         )
                     }
             }
@@ -367,7 +390,8 @@ class TrainingDetailRepository(
                     progressDenominator = "1",
                     currentProgress = "보기",
                     backgroundColorResId = R.color.button_color_mind,
-                    targetActivityClass = AutoTrapReportActivity::class.java
+                    targetActivityClass = AutoTrapReportActivity::class.java,
+                    reportDateMillis = null
                 )
             )
 
@@ -390,7 +414,8 @@ class TrainingDetailRepository(
                             trainingName = "주간 점검 기록 보기",
                             timestamp = ts,
                             trainingType = TrainingType.EXPRESSION_ACTION_TRAINING,
-                            backgroundColorResId = R.color.button_color_expression
+                            backgroundColorResId = R.color.button_color_expression,
+                            targetActivityClass = WeeklyReportActivity::class.java
                         )
                     }
             }
@@ -409,7 +434,8 @@ class TrainingDetailRepository(
                             trainingName = "회피 일지 기록 보기",
                             timestamp = ts,
                             trainingType = TrainingType.EXPRESSION_ACTION_TRAINING,
-                            backgroundColorResId = R.color.button_color_expression
+                            backgroundColorResId = R.color.button_color_expression,
+                            targetActivityClass = AvoidanceReportActivity::class.java
                         )
                     }
             }
@@ -428,7 +454,8 @@ class TrainingDetailRepository(
                             trainingName = "정서 머무르기 기록 보기",
                             timestamp = ts,
                             trainingType = TrainingType.EXPRESSION_ACTION_TRAINING,
-                            backgroundColorResId = R.color.button_color_expression
+                            backgroundColorResId = R.color.button_color_expression,
+                            targetActivityClass = StayReportActivity::class.java
                         )
                     }
             }
@@ -447,7 +474,8 @@ class TrainingDetailRepository(
                             trainingName = "반대 행동하기 기록 보기",
                             timestamp = ts,
                             trainingType = TrainingType.EXPRESSION_ACTION_TRAINING,
-                            backgroundColorResId = R.color.button_color_expression
+                            backgroundColorResId = R.color.button_color_expression,
+                            targetActivityClass = OppositeReportActivity::class.java
                         )
                     }
             }
@@ -466,7 +494,8 @@ class TrainingDetailRepository(
                             trainingName = "대안 행동 찾기 기록 보기",
                             timestamp = ts,
                             trainingType = TrainingType.EXPRESSION_ACTION_TRAINING,
-                            backgroundColorResId = R.color.button_color_expression
+                            backgroundColorResId = R.color.button_color_expression,
+                            targetActivityClass = AlternativeReportActivity::class.java
                         )
                     }
             }
@@ -486,7 +515,8 @@ class TrainingDetailRepository(
         trainingName: String,
         timestamp: Timestamp?,
         trainingType: TrainingType,
-        backgroundColorResId: Int
+        backgroundColorResId: Int,
+        targetActivityClass: Class<out AppCompatActivity>?
     ): DetailTrainingItem? {
         if (timestamp == null) return null
 
@@ -499,7 +529,8 @@ class TrainingDetailRepository(
             progressDenominator = "1",
             currentProgress = "보기",
             backgroundColorResId = backgroundColorResId,
-            targetActivityClass = null
+            targetActivityClass = targetActivityClass,
+            reportDateMillis = timestamp.toDate().time
         )
     }
 

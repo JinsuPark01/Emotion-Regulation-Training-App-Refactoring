@@ -13,5 +13,6 @@ data class DetailTrainingItem(
     val progressDenominator: String,
     val currentProgress: String, // 현재 진행률 (0-100)
     @ColorRes val backgroundColorResId: Int? = null, // 배경색 리소스 ID
-    val targetActivityClass: Class<out AppCompatActivity>? = null
+    val targetActivityClass: Class<out AppCompatActivity>? = null,
+    val reportDateMillis: Long? = null
 )

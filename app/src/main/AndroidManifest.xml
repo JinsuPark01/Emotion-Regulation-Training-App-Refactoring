@@ -44,7 +44,7 @@
         <activity android:name=".ui.body.BodyExplanationActivity" android:exported="false"  android:screenOrientation="portrait" />
         <activity android:name=".ui.body.BodyPracticeActivity" android:exported="false"  android:screenOrientation="portrait" />
         <activity android:name=".ui.body.BodyRecordActivity" android:exported="false"  android:screenOrientation="portrait"/>
-        <activity android:name=".ui.body.BodyTrainingReportActivity" android:exported="false"  android:screenOrientation="portrait"/>
+        <activity android:name=".ui.body.BodyReportActivity" android:exported="false"  android:screenOrientation="portrait"/>
 
         <activity android:name=".ui.mind.art.ArtActivity" android:exported="false"  android:screenOrientation="portrait" />
         <activity android:name=".ui.mind.art.ArtReportActivity" android:exported="false"  android:screenOrientation="portrait" />

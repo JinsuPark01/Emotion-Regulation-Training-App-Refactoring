@@ -8,7 +8,7 @@ import com.example.emotionalapp.data.TrainingType
 import com.example.emotionalapp.ui.emotion.select.SelectReportActivity
 import com.example.emotionalapp.ui.emotion.arc.ArcReportActivity
 import com.example.emotionalapp.ui.emotion.anchor.AnchorReportActivity
-import com.example.emotionalapp.ui.body.BodyTrainingReportActivity
+import com.example.emotionalapp.ui.body.BodyReportActivity
 import com.example.emotionalapp.ui.mind.AutoTrapReportActivity
 import com.example.emotionalapp.ui.mind.trap.TrapReportActivity
 import com.example.emotionalapp.ui.mind.art.ArtReportActivity
@@ -262,7 +262,7 @@ class TrainingDetailRepository(
                             timestamp = ts,
                             trainingType = TrainingType.BODY_TRAINING,
                             backgroundColorResId = R.color.button_color_body,
-                            targetActivityClass = BodyTrainingReportActivity::class.java
+                            targetActivityClass = BodyReportActivity::class.java
                         )
                     }
             }

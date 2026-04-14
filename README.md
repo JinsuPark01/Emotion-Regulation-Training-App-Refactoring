@@ -17,15 +17,15 @@ https://github.com/JinsuPark01/Emotion-Regulation-Training-App
 
 ## 🛠 현재 적용 범위
 
-- MainActivity + Fragment 기반 메인 화면 전환 구조 적용
-- 전체훈련 / 상세훈련 화면 Compose + MVVM 적용
-- 일부 훈련 실행 화면 Activity 유지 상태에서 MVVM + Repository 적용
+- 메인 화면의 기존 Activity(10개) 구조를 MainActivity + Fragment(3개) 구조로 재설계해 화면 구조 단순화
+- 전체훈련 / 상세훈련 Fragment 내부를 Jetpack Compose + MVVM으로 구성
+- 훈련 실행(12개), 기록 보기(13개) 화면에 MVVM + Repository를 적용해 UI와 데이터 처리 책임 분
 
 ---
 
 ## 💡 기대 효과
 
-- UI / 상태 / 데이터 처리 책임 분리
-- Firebase 접근 로직의 분리로 테스트 및 수정 범위 축소
-- 이후 기록보기 화면, 상세 연결, Compose 전환 확장 용이
+- 단일 Activity에 혼재되어 있던 UI, Firebase 접근, 상태 관리 로직을 분리해 역할이 명확해짐
+- Firebase 접근 로직이 Repository로 분리되면서 UI 로직과 결합도를 낮춰 유지보수성 개선
+- 이후 화면 추가나 Compose 전환 시 ViewModel/Repository 재사용이 가능한 구조로 확장성 확
 

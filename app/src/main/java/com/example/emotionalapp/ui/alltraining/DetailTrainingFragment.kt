@@ -92,12 +92,15 @@ class TrainingDetailFragment : Fragment() {
 
                         clickedItem.targetActivityClass?.let { targetClass ->
                             val intent = Intent(requireContext(), targetClass).apply {
+                                putExtra("reportDateMillis", clickedItem.reportDateMillis ?: -1L)
+
+                                putExtra(
+                                    "trainingId",
+                                    clickedItem.trainingIdForReport ?: clickedItem.id
+                                )
+
                                 putExtra("TRAINING_ID", clickedItem.id)
                                 putExtra("TRAINING_TITLE", clickedItem.title)
-
-                                if (clickedItem.currentProgress == "보기") {
-                                    putExtra("reportDateMillis", clickedItem.reportDateMillis ?: -1L)
-                                }
                             }
                             startActivity(intent)
                         } ?: run {

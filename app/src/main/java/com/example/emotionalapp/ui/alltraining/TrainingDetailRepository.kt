@@ -262,7 +262,8 @@ class TrainingDetailRepository(
                             timestamp = ts,
                             trainingType = TrainingType.BODY_TRAINING,
                             backgroundColorResId = R.color.button_color_body,
-                            targetActivityClass = BodyReportActivity::class.java
+                            targetActivityClass = BodyReportActivity::class.java,
+                            trainingIdForReport = trainingId
                         )
                     }
             }
@@ -516,7 +517,8 @@ class TrainingDetailRepository(
         timestamp: Timestamp?,
         trainingType: TrainingType,
         backgroundColorResId: Int,
-        targetActivityClass: Class<out AppCompatActivity>?
+        targetActivityClass: Class<out AppCompatActivity>?,
+        trainingIdForReport: String? = null
     ): DetailTrainingItem? {
         if (timestamp == null) return null
 
@@ -530,7 +532,8 @@ class TrainingDetailRepository(
             currentProgress = "보기",
             backgroundColorResId = backgroundColorResId,
             targetActivityClass = targetActivityClass,
-            reportDateMillis = timestamp.toDate().time
+            reportDateMillis = timestamp.toDate().time,
+            trainingIdForReport = trainingIdForReport
         )
     }
 

@@ -4,13 +4,9 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.emotionalapp.R
-import com.google.firebase.Timestamp
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.DocumentSnapshot
-import com.google.firebase.firestore.FirebaseFirestore
-import java.util.*
 
 class ArtReportActivity : AppCompatActivity() {
 
@@ -19,15 +15,25 @@ class ArtReportActivity : AppCompatActivity() {
     private lateinit var secondImage: ImageView
     private lateinit var answerViews: List<TextView>
 
+    private val viewModel: ArtReportViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mind_art_report)
 
+        initViews()
+        observeUiState()
+
+        btnBack.setOnClickListener { finish() }
+
+        val reportMillis = intent?.getLongExtra("reportDateMillis", -1L) ?: -1L
+        viewModel.loadReport(reportMillis)
+    }
+
+    private fun initViews() {
         btnBack = findViewById(R.id.btnBack)
         firstImage = findViewById(R.id.firstImage)
         secondImage = findViewById(R.id.secondImage)
-
-        btnBack.setOnClickListener { finish() }
 
         answerViews = listOf(
             findViewById(R.id.answer1),
@@ -41,56 +47,32 @@ class ArtReportActivity : AppCompatActivity() {
             findViewById(R.id.answer9),
             findViewById(R.id.answer10)
         )
-
-        loadDataFromFirestore()
     }
 
-    private fun loadDataFromFirestore() {
-        val email = FirebaseAuth.getInstance().currentUser?.email ?: return
-        val db = FirebaseFirestore.getInstance()
-
-        val reportMillis = intent?.getLongExtra("reportDateMillis", -1L) ?: -1L
-        if (reportMillis == -1L) {
-            Toast.makeText(this, "보고서 날짜가 유효하지 않습니다.", Toast.LENGTH_SHORT).show()
-            finish()
-            return
-        }
-
-        val targetTimestamp = Timestamp(Date(reportMillis))
-
-        db.collection("user").document(email)
-            .collection("mindArt")
-            .whereEqualTo("date", targetTimestamp)
-            .limit(1)
-            .get()
-            .addOnSuccessListener { documents ->
-                if (!documents.isEmpty) {
-                    val document = documents.first()
-                    bindDataToUI(document)
-                } else {
-                    Toast.makeText(this, "해당 날짜의 보고서를 찾을 수 없습니다.", Toast.LENGTH_SHORT).show()
+    private fun observeUiState() {
+        viewModel.uiState.observe(this) { state ->
+            state.errorMessage?.let { message ->
+                Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+                if (state.reportData == null) {
+                    finish()
                 }
+                return@observe
             }
-            .addOnFailureListener {
-                Toast.makeText(this, "데이터 로드 실패: ${it.message}", Toast.LENGTH_SHORT).show()
-            }
+
+            state.reportData?.let { bindDataToUi(it) }
+        }
     }
 
-    private fun bindDataToUI(document: DocumentSnapshot) {
-        val firstImageName = document.getString("firstImage")
-        val secondImageName = document.getString("secondImage")
+    private fun bindDataToUi(data: ArtReportData) {
+        firstImage.setImageResource(getResIdByImageName(data.firstImageName))
+        secondImage.setImageResource(getResIdByImageName(data.secondImageName))
 
-        firstImage.setImageResource(getResIdByImageName(firstImageName))
-        secondImage.setImageResource(getResIdByImageName(secondImageName))
-
-        // 1번 이미지 관련 답변
         for (i in 0 until 5) {
-            answerViews[i].setText(document.getString("1art_${i + 1}") ?: "")
+            answerViews[i].text = data.firstAnswers.getOrElse(i) { "" }
         }
 
-        // 2번 이미지 관련 답변
         for (i in 0 until 5) {
-            answerViews[i + 5].setText(document.getString("2art_${i + 1}") ?: "")
+            answerViews[i + 5].text = data.secondAnswers.getOrElse(i) { "" }
         }
     }
 

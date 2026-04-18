@@ -4,7 +4,9 @@ import android.app.Application
 import androidx.lifecycle.ProcessLifecycleOwner
 import androidx.appcompat.app.AppCompatDelegate
 import com.example.emotionalapp.util.AppLifecycleObserver
+import dagger.hilt.android.HiltAndroidApp
 
+@HiltAndroidApp
 class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()

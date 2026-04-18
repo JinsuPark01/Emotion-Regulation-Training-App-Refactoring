@@ -9,6 +9,10 @@ plugins {
 
     // Firebase 연동용 Google Services 플러그인
     id("com.google.gms.google-services")
+
+    //Hilt
+    id("com.google.devtools.ksp")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -172,6 +176,9 @@ dependencies {
     //
     implementation("androidx.fragment:fragment-ktx:1.8.6")
 
+    //hilt
+    implementation("com.google.dagger:hilt-android:2.57.1")
+    ksp("com.google.dagger:hilt-android-compiler:2.57.1")
 
     // -------------------------
     // 테스트

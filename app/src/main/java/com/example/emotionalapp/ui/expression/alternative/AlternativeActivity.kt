@@ -25,8 +25,9 @@ import com.example.emotionalapp.adapter.DetailedEmotionAdapter
 import com.example.emotionalapp.data.AlternativeActionItem
 import com.example.emotionalapp.databinding.ActivityAlternativeActionBinding
 import com.example.emotionalapp.util.setSingleListener
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-
+@AndroidEntryPoint
 class AlternativeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityAlternativeActionBinding

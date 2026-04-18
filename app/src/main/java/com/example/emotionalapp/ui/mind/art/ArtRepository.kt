@@ -10,10 +10,11 @@ import kotlinx.coroutines.tasks.await
 import java.text.SimpleDateFormat
 import java.util.Locale
 import java.util.TimeZone
+import javax.inject.Inject
 
-class ArtRepository(
-    private val auth: FirebaseAuth = FirebaseAuth.getInstance(),
-    private val db: FirebaseFirestore = FirebaseFirestore.getInstance()
+class ArtRepository @Inject constructor(
+    private val auth: FirebaseAuth,
+    private val db: FirebaseFirestore
 ) {
 
     suspend fun saveArtTraining(

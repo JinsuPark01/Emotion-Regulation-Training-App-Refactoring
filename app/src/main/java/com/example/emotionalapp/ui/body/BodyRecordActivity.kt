@@ -14,12 +14,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.emotionalapp.R
 import com.example.emotionalapp.util.setSingleListener
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import nl.dionsegijn.konfetti.core.Party
 import nl.dionsegijn.konfetti.core.Position
 import nl.dionsegijn.konfetti.core.emitter.Emitter
 import java.util.concurrent.TimeUnit
-
+@AndroidEntryPoint
 class BodyRecordActivity : AppCompatActivity() {
 
     private val viewModel: BodyRecordViewModel by viewModels()

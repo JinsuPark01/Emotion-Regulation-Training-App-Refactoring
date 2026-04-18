@@ -4,10 +4,11 @@ import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.Date
+import javax.inject.Inject
 
-class AvoidanceReportRepository(
-    private val db: FirebaseFirestore = FirebaseFirestore.getInstance(),
-    private val auth: FirebaseAuth = FirebaseAuth.getInstance()
+class AvoidanceReportRepository @Inject constructor(
+    private val auth: FirebaseAuth,
+    private val db: FirebaseFirestore
 ) {
 
     fun loadAvoidanceReport(

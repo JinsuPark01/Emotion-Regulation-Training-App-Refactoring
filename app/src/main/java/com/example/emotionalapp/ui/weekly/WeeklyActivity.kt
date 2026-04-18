@@ -15,8 +15,9 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.emotionalapp.R
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-
+@AndroidEntryPoint
 class WeeklyActivity : AppCompatActivity() {
 
     private lateinit var btnPrev: TextView

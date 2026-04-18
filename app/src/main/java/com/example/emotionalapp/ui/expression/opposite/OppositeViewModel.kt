@@ -2,13 +2,15 @@ package com.example.emotionalapp.ui.expression.opposite
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-
-class OppositeViewModel(
-    private val repository: OppositeRepository = OppositeRepository()
+import javax.inject.Inject
+@HiltViewModel
+class OppositeViewModel @Inject constructor(
+    private val repository: OppositeRepository
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(OppositeUiState())

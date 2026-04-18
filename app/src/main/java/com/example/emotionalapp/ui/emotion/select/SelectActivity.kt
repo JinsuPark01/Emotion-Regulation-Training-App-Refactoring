@@ -14,8 +14,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.emotionalapp.R
 import com.example.emotionalapp.ui.emotion.select.SelectViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-
+@AndroidEntryPoint
 class SelectActivity : AppCompatActivity() {
 
     private lateinit var btnBack: ImageView

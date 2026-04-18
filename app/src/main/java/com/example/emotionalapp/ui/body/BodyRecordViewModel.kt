@@ -3,13 +3,15 @@ package com.example.emotionalapp.ui.body
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-
-class BodyRecordViewModel(
-    private val repository: BodyRecordRepository = BodyRecordRepository()
+import javax.inject.Inject
+@HiltViewModel
+class BodyRecordViewModel @Inject constructor(
+    private val repository: BodyRecordRepository
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(BodyRecordUiState())

@@ -5,10 +5,11 @@ import com.google.firebase.firestore.FirebaseFirestore
 import java.util.Calendar
 import java.util.Date
 import java.util.TimeZone
+import javax.inject.Inject
 
-class SelectReportRepository(
-    private val auth: FirebaseAuth = FirebaseAuth.getInstance(),
-    private val db: FirebaseFirestore = FirebaseFirestore.getInstance()
+class SelectReportRepository @Inject constructor(
+    private val auth: FirebaseAuth,
+    private val db: FirebaseFirestore
 ) {
 
     fun loadSelectReport(

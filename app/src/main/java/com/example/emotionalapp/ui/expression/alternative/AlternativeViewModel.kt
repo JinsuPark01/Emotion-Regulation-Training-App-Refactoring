@@ -3,13 +3,15 @@ package com.example.emotionalapp.ui.expression.alternative
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.emotionalapp.R
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-
-class AlternativeViewModel(
-    private val repository: AlternativeRepository = AlternativeRepository()
+import javax.inject.Inject
+@HiltViewModel
+class AlternativeViewModel @Inject constructor(
+    private val repository: AlternativeRepository
 ) : ViewModel() {
 
     val emotions = listOf(

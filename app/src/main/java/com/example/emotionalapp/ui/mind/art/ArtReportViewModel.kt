@@ -3,9 +3,11 @@ package com.example.emotionalapp.ui.mind.art
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-
-class ArtReportViewModel(
-    private val repository: ArtReportRepository = ArtReportRepository()
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
+@HiltViewModel
+class ArtReportViewModel @Inject constructor(
+    private val repository: ArtReportRepository
 ) : ViewModel() {
 
     private val _uiState = MutableLiveData(ArtReportUiState())

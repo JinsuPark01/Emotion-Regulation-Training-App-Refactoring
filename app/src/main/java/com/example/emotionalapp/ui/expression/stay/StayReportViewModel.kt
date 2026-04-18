@@ -3,9 +3,11 @@ package com.example.emotionalapp.ui.expression.stay
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-
-class StayReportViewModel(
-    private val repository: StayReportRepository = StayReportRepository()
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
+@HiltViewModel
+class StayReportViewModel @Inject constructor(
+    private val repository: StayReportRepository
 ) : ViewModel() {
 
     private val _uiState = MutableLiveData(StayReportUiState())

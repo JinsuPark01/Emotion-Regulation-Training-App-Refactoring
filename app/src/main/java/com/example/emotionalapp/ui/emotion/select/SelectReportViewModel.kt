@@ -3,9 +3,11 @@ package com.example.emotionalapp.ui.emotion.select
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-
-class SelectReportViewModel(
-    private val repository: SelectReportRepository = SelectReportRepository()
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
+@HiltViewModel
+class SelectReportViewModel @Inject constructor(
+    private val repository: SelectReportRepository
 ) : ViewModel() {
 
     private val _uiState = MutableLiveData(SelectReportUiState())

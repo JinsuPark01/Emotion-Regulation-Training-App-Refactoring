@@ -26,8 +26,9 @@ import androidx.lifecycle.lifecycleScope
 import com.example.emotionalapp.R
 import com.example.emotionalapp.util.setSingleListener
 import com.google.android.material.progressindicator.CircularProgressIndicator
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-
+@AndroidEntryPoint
 class StayActivity : AppCompatActivity() {
 
     private lateinit var btnPrev: TextView

@@ -3,13 +3,16 @@ package com.example.emotionalapp.ui.mind.art
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.emotionalapp.R
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
-class ArtViewModel(
-    private val repository: ArtRepository = ArtRepository()
+@HiltViewModel
+class ArtViewModel @Inject constructor(
+    private val repository: ArtRepository
 ) : ViewModel() {
 
     private val imageResIds = listOf(

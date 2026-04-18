@@ -8,10 +8,11 @@ import kotlinx.coroutines.tasks.await
 import java.text.SimpleDateFormat
 import java.util.Locale
 import java.util.TimeZone
+import javax.inject.Inject
 
-class AlternativeRepository(
-    private val auth: FirebaseAuth = FirebaseAuth.getInstance(),
-    private val db: FirebaseFirestore = FirebaseFirestore.getInstance()
+class AlternativeRepository @Inject constructor(
+    private val auth: FirebaseAuth,
+    private val db: FirebaseFirestore
 ) {
 
     suspend fun saveTraining(state: AlternativeUiState): Result<Unit> {

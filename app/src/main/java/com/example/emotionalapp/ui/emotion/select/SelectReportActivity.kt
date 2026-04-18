@@ -15,7 +15,9 @@ import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
 import com.github.mikephil.charting.formatter.ValueFormatter
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SelectReportActivity : AppCompatActivity() {
 
     private lateinit var lineChartMind: LineChart

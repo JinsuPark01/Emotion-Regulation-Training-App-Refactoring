@@ -3,9 +3,11 @@ package com.example.emotionalapp.ui.expression.avoidance
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-
-class AvoidanceReportViewModel(
-    private val repository: AvoidanceReportRepository = AvoidanceReportRepository()
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
+@HiltViewModel
+class AvoidanceReportViewModel @Inject constructor(
+    private val repository: AvoidanceReportRepository
 ) : ViewModel() {
 
     private val _uiState = MutableLiveData(AvoidanceReportUiState())

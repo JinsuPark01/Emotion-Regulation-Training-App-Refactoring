@@ -10,7 +10,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import com.example.emotionalapp.R
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AutoReportActivity : AppCompatActivity() {
 
     private lateinit var answer1: TextView

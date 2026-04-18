@@ -2,13 +2,15 @@ package com.example.emotionalapp.ui.emotion.anchor
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-
-class AnchorViewModel(
-    private val repository: AnchorRepository = AnchorRepository()
+import javax.inject.Inject
+@HiltViewModel
+class AnchorViewModel @Inject constructor(
+    private val repository: AnchorRepository
 ) : ViewModel() {
 
     val cueOptions = listOf(

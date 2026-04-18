@@ -3,9 +3,11 @@ package com.example.emotionalapp.ui.emotion.anchor
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-
-class AnchorReportViewModel(
-    private val repository: AnchorReportRepository = AnchorReportRepository()
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
+@HiltViewModel
+class AnchorReportViewModel @Inject constructor(
+    private val repository: AnchorReportRepository
 ) : ViewModel() {
 
     private val _uiState = MutableLiveData(AnchorReportUiState())

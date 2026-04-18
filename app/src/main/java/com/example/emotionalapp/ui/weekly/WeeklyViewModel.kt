@@ -2,13 +2,15 @@ package com.example.emotionalapp.ui.weekly
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-
-class WeeklyViewModel(
-    private val repository: WeeklyRepository = WeeklyRepository()
+import javax.inject.Inject
+@HiltViewModel
+class WeeklyViewModel @Inject constructor(
+    private val repository: WeeklyRepository
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(WeeklyUiState())

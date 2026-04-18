@@ -2,13 +2,15 @@ package com.example.emotionalapp.ui.expression.stay
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-
-class StayViewModel(
-    private val repository: StayRepository = StayRepository()
+import javax.inject.Inject
+@HiltViewModel
+class StayViewModel @Inject constructor(
+    private val repository: StayRepository
 ) : ViewModel() {
 
     val emotions = listOf(

@@ -7,7 +7,9 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.emotionalapp.R
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ArtReportActivity : AppCompatActivity() {
 
     private lateinit var btnBack: ImageView

@@ -21,8 +21,10 @@ import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.example.emotionalapp.R
 import com.example.emotionalapp.util.setSingleListener
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class ArtActivity : AppCompatActivity() {
 
     private lateinit var btnPrev: TextView

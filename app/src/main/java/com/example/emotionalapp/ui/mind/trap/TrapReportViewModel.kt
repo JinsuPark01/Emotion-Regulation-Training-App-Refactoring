@@ -3,9 +3,11 @@ package com.example.emotionalapp.ui.mind.trap
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-
-class TrapReportViewModel(
-    private val repository: TrapReportRepository = TrapReportRepository()
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
+@HiltViewModel
+class TrapReportViewModel @Inject constructor(
+    private val repository: TrapReportRepository
 ) : ViewModel() {
 
     private val _uiState = MutableLiveData(TrapReportUiState())

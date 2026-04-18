@@ -15,8 +15,9 @@ import androidx.lifecycle.lifecycleScope
 import com.example.emotionalapp.R
 import com.example.emotionalapp.databinding.ActivityOppositeActionBinding
 import com.example.emotionalapp.util.setSingleListener
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-
+@AndroidEntryPoint
 class OppositeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityOppositeActionBinding

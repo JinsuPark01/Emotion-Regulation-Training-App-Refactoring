@@ -2,13 +2,16 @@ package com.example.emotionalapp.ui.mind.trap
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class TrapViewModel(
-    private val repository: TrapRepository = TrapRepository()
+@HiltViewModel
+class TrapViewModel @Inject constructor(
+    private val repository: TrapRepository
 ) : ViewModel() {
 
     private val page2Options = listOf(

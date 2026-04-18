@@ -3,9 +3,11 @@ package com.example.emotionalapp.ui.weekly
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-
-class WeeklyReportViewModel(
-    private val repository: WeeklyReportRepository = WeeklyReportRepository()
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
+@HiltViewModel
+class WeeklyReportViewModel @Inject constructor(
+    private val repository: WeeklyReportRepository
 ) : ViewModel() {
 
     private val _uiState = MutableLiveData(WeeklyReportUiState())

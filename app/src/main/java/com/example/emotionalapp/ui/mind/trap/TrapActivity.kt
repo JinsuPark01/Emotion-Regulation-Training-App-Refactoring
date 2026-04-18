@@ -21,8 +21,10 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import com.example.emotionalapp.R
 import com.example.emotionalapp.util.setSingleListener
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class TrapActivity : AppCompatActivity() {
 
     private lateinit var btnPrev: TextView

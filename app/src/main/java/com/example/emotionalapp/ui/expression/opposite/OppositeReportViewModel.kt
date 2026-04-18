@@ -3,9 +3,11 @@ package com.example.emotionalapp.ui.expression.opposite
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-
-class OppositeReportViewModel(
-    private val repository: OppositeReportRepository = OppositeReportRepository()
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
+@HiltViewModel
+class OppositeReportViewModel @Inject constructor(
+    private val repository: OppositeReportRepository
 ) : ViewModel() {
 
     private val _uiState = MutableLiveData(OppositeReportUiState())

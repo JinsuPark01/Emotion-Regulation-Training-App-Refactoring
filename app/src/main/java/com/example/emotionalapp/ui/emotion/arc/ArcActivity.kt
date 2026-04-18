@@ -22,8 +22,9 @@ import com.example.emotionalapp.R
 import com.example.emotionalapp.ui.emotion.arc.ArcUiState
 import com.example.emotionalapp.ui.emotion.arc.ArcViewModel
 import com.example.emotionalapp.util.setSingleListener
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-
+@AndroidEntryPoint
 class ArcActivity : AppCompatActivity() {
 
     private lateinit var btnPrev: TextView

@@ -3,9 +3,11 @@ package com.example.emotionalapp.ui.mind.auto
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-
-class AutoReportViewModel(
-    private val repository: AutoReportRepository = AutoReportRepository()
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
+@HiltViewModel
+class AutoReportViewModel @Inject constructor(
+    private val repository: AutoReportRepository
 ) : ViewModel() {
 
     private val _uiState = MutableLiveData(AutoReportUiState())

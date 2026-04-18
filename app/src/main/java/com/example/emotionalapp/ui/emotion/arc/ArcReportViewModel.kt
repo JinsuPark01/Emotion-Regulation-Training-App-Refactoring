@@ -3,9 +3,11 @@ package com.example.emotionalapp.ui.emotion.arc
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-
-class ArcReportViewModel(
-    private val repository: ArcReportRepository = ArcReportRepository()
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
+@HiltViewModel
+class ArcReportViewModel @Inject constructor(
+    private val repository: ArcReportRepository
 ) : ViewModel() {
 
     private val _uiState = MutableLiveData(ArcReportUiState())

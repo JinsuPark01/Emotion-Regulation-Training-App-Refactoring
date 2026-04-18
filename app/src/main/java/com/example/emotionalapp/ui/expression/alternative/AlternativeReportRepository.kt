@@ -4,10 +4,11 @@ import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.Date
+import javax.inject.Inject
 
-class AlternativeReportRepository(
-    private val db: FirebaseFirestore = FirebaseFirestore.getInstance(),
-    private val auth: FirebaseAuth = FirebaseAuth.getInstance()
+class AlternativeReportRepository @Inject constructor(
+    private val db: FirebaseFirestore,
+    private val auth: FirebaseAuth
 ) {
 
     fun loadAlternativeReport(

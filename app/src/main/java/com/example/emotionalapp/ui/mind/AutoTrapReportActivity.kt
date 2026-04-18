@@ -14,7 +14,9 @@ import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 import com.github.mikephil.charting.formatter.ValueFormatter
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AutoTrapReportActivity : AppCompatActivity() {
 
     private lateinit var chart: BarChart

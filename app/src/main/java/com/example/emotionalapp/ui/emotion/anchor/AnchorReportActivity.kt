@@ -9,7 +9,9 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.emotionalapp.R
 import com.example.emotionalapp.ui.login_signup.LoginActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AnchorReportActivity : AppCompatActivity() {
 
     private val viewModel: AnchorReportViewModel by viewModels()

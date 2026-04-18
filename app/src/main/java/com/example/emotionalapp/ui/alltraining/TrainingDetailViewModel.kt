@@ -21,13 +21,15 @@ import com.example.emotionalapp.ui.mind.art.ArtActivity
 import com.example.emotionalapp.ui.mind.auto.AutoActivity
 import com.example.emotionalapp.ui.mind.trap.TrapActivity
 import com.example.emotionalapp.ui.weekly.WeeklyActivity
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-
-class TrainingDetailViewModel(
-    private val repository: TrainingDetailRepository = TrainingDetailRepository()
+import javax.inject.Inject
+@HiltViewModel
+class TrainingDetailViewModel @Inject constructor(
+    private val repository: TrainingDetailRepository
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(TrainingDetailUiState(isLoading = true))

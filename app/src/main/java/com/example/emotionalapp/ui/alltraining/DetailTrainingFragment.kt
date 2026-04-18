@@ -13,7 +13,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.emotionalapp.data.TrainingMenuItem
 import com.example.emotionalapp.data.TrainingMenuType
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class TrainingDetailFragment : Fragment() {
 
     companion object {

@@ -1,3 +1,5 @@
+import com.google.firebase.appdistribution.gradle.firebaseAppDistribution
+
 plugins {
     // Android 애플리케이션 모듈 플러그인
     alias(libs.plugins.android.application)
@@ -9,6 +11,7 @@ plugins {
 
     // Firebase 연동용 Google Services 플러그인
     id("com.google.gms.google-services")
+    id("com.google.firebase.appdistribution")
 
     //Hilt
     id("com.google.devtools.ksp")
@@ -41,11 +44,16 @@ android {
     }
 
     buildTypes {
-        release {
-            // 현재는 난독화/최적화 비활성화
-            isMinifyEnabled = false
+        getByName("debug") {
+            firebaseAppDistribution {
+                artifactType = "APK"
+                testers = "gary7345@gmail.com"
+                releaseNotes = "GitHub Actions automated build"
+            }
+        }
 
-            // Proguard 설정 파일
+        getByName("release") {
+            isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
